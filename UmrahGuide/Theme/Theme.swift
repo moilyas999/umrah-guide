@@ -9,8 +9,11 @@ enum Theme {
     static let muted = Color("MutedInk")
     static let danger = Color("Caution")
 
-    static let cardRadius: CGFloat = 16
+    static let cardRadius: CGFloat = 18
     static let thumbHeight: CGFloat = 56
+    static let minTap: CGFloat = 52
+    static let horizontalPadding: CGFloat = 20
+    static let contentMaxWidth: CGFloat = 560
 }
 
 extension View {
@@ -22,12 +25,18 @@ extension View {
             .clipShape(RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous)
-                    .stroke(Theme.ink.opacity(0.08), lineWidth: 1)
+                    .stroke(Theme.ink.opacity(0.06), lineWidth: 1)
             )
     }
 
     func umrahScreenBackground() -> some View {
         self.background(Theme.page.ignoresSafeArea())
+    }
+
+    func umrahReadableWidth() -> some View {
+        self
+            .frame(maxWidth: Theme.contentMaxWidth)
+            .frame(maxWidth: .infinity)
     }
 }
 
@@ -52,7 +61,7 @@ struct ThumbPrimaryButton: View {
                     Image(systemName: systemImage)
                 }
             }
-            .font(.title2.weight(.bold))
+            .font(.title3.weight(.bold))
             .frame(maxWidth: .infinity, minHeight: Theme.thumbHeight)
             .foregroundStyle(Theme.page)
             .background(enabled ? Theme.accent : Theme.muted.opacity(0.35))
@@ -85,14 +94,14 @@ struct ThumbSecondaryButton: View {
                 }
                 Text(title)
             }
-            .font(.title3.weight(.semibold))
+            .font(.body.weight(.semibold))
             .frame(maxWidth: .infinity, minHeight: Theme.thumbHeight)
             .foregroundStyle(enabled ? Theme.ink : Theme.muted)
             .background(Theme.card)
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(Theme.ink.opacity(0.16), lineWidth: 1.5)
+                    .stroke(Theme.ink.opacity(0.12), lineWidth: 1)
             )
         }
         .buttonStyle(.plain)

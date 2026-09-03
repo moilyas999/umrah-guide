@@ -24,31 +24,10 @@ struct DuaDetailView: View {
                 .accessibilityElement(children: .combine)
                 .accessibilityLabel("Occasion: \(dua.occasion.title). \(dua.occasion.meaning)")
 
-                LabeledSection(title: "Arabic", systemImage: "textformat.alt") {
-                    Text(dua.arabic)
-                        .font(.title.weight(.medium))
-                        .foregroundStyle(Theme.ink)
-                        .multilineTextAlignment(.trailing)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                        .environment(\.layoutDirection, .rightToLeft)
-                        .textSelection(.enabled)
-                        .minimumScaleFactor(0.7)
-                }
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel("Arabic. \(dua.transliteration)")
+                DuaDisplayFilterBar()
 
-                LabeledSection(title: "Transliteration", systemImage: "character.book.closed") {
-                    Text(dua.transliteration)
-                        .font(.body)
-                        .italic()
-                        .foregroundStyle(Theme.ink)
-                        .textSelection(.enabled)
-                }
-
-                LabeledSection(title: "Meaning", systemImage: "quote.closing") {
-                    Text(dua.meaning)
-                        .font(.title3)
-                        .foregroundStyle(Theme.ink)
+                LabeledSection(title: "Dua", systemImage: "text.book.closed") {
+                    DuaTextBlock(dua: dua, showsTitle: false)
                 }
 
                 LabeledSection(title: "When to say it", systemImage: "clock") {
@@ -68,7 +47,7 @@ struct DuaDetailView: View {
                     }
                 }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, Theme.horizontalPadding)
             .padding(.vertical, 16)
         }
         .umrahScreenBackground()
@@ -92,4 +71,5 @@ struct DuaDetailView: View {
     NavigationStack {
         DuaDetailView(dua: DuaCatalog.duas[0])
     }
+    .environmentObject(DuaDisplayStore(defaults: UserDefaults(suiteName: "preview.dua.detail") ?? .standard))
 }

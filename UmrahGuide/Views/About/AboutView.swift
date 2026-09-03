@@ -33,7 +33,7 @@ struct AboutView: View {
                     DisclaimerBanner()
 
                     LabeledSection(title: "What this app is", systemImage: "book") {
-                        Text("A quiet, offline companion. Perform shows one next action at a time for ihram, tawaf, sa'i, and cutting the hair. Your checklist ticks and your place in Perform stay on this device.")
+                        Text("A quiet, offline companion. Perform lists ihram, tawaf, sa'i, and cutting the hair as collapsible stages. You choose whether each dua shows Arabic, how to say it, and the English meaning. Your checklist ticks, your place, and that display choice stay on this device.")
                             .font(.body)
                             .foregroundStyle(Theme.ink)
                     }

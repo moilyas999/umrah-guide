@@ -38,6 +38,8 @@ final class RitualCatalogTests: XCTestCase {
     func testDuasCoverEveryOccasion() {
         let occasions = Set(DuaCatalog.duas.map(\.occasion))
         XCTAssertEqual(occasions, Set(DuaOccasion.allCases))
-        XCTAssertFalse(DuaCatalog.duas.contains(where: { $0.arabic.isEmpty || $0.sourceNote.isEmpty }))
+        XCTAssertFalse(DuaCatalog.duas.contains(where: {
+            $0.arabic.isEmpty || $0.transliteration.isEmpty || $0.meaning.isEmpty || $0.sourceNote.isEmpty
+        }))
     }
 }
