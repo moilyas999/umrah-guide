@@ -38,7 +38,7 @@ Export compliance: the target sets `ITSAppUsesNonExemptEncryption` to `NO`. The 
 
 | Tab | Contents |
 | --- | --- |
-| Perform | Linear flow: one next action at a time through ihram, tawaf, sa'i, and cutting the hair. Huge type, a Next button, optional “I've done this.” Pack and duas open as sheets so you do not lose your place. |
+| Perform | Four collapsible stages (ihram, tawaf, sa'i, hair). The current stage is marked Now. Expand a stage for instructions, an in-place checklist, and its duas. One Next button. A filter shows Arabic, how to say it, and meaning in any combination (default: all three; saved on this iPhone). |
 | Pack | Ihram and packing items, stored in on-device `UserDefaults` |
 | More | All duas (by stage, plus general), About, and a reset for your Perform place |
 
@@ -50,9 +50,11 @@ The **UmrahGuide** scheme includes **UmrahGuideTests**:
 
 - Checklist ticks persist across a fresh `ChecklistStore` using an isolated `UserDefaults` suite.
 - Ritual catalog contains Ihram, Tawaf, Sa'i, and Halq/Taqsir, each with the required sections.
-- Perform catalog is a 16-step linear walk; each step has 1–3 short “do now” sentences.
+- Perform catalog is a 16-step linear walk; each step has a short action summary and 1–3 “do now” sentences.
 - Perform place and “I've done this” ticks persist in an isolated `UserDefaults` suite.
-- Dua catalog covers ihram, the Sacred Mosque, first sight of the Kaaba, tawaf (including Rabbana atina), Maqam Ibrahim, Zamzam, sa'i, the hair rite, and general duas. Every card has Arabic, English meaning, and an honest source note.
+- Accordion model marks the current stage, expands it after a stage change, and lists that stage's duas.
+- Dua display filter (Arabic / transliteration / meaning) defaults to all three and persists in an isolated `UserDefaults` suite.
+- Dua catalog covers ihram, the Sacred Mosque, first sight of the Kaaba, tawaf (including Rabbana atina), Maqam Ibrahim, Zamzam, sa'i, the hair rite, and general duas. Every card has Arabic, Latin transliteration, English meaning, and an honest source note.
 
 On a Mac: Product → Test, or:
 

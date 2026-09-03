@@ -77,16 +77,7 @@ struct RitualStepDetailView: View {
                         NavigationLink {
                             DuaDetailView(dua: dua)
                         } label: {
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(dua.title)
-                                    .font(.body.weight(.semibold))
-                                    .foregroundStyle(Theme.ink)
-                                Text(dua.meaning)
-                                    .font(.subheadline)
-                                    .foregroundStyle(Theme.muted)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            DuaTextBlock(dua: dua, compact: true)
                         }
                         .buttonStyle(.plain)
                     }
@@ -115,4 +106,5 @@ struct RitualStepDetailView: View {
     NavigationStack {
         RitualStepDetailView(step: RitualCatalog.step(id: .ihram))
     }
+    .environmentObject(DuaDisplayStore(defaults: UserDefaults(suiteName: "preview.ritual") ?? .standard))
 }

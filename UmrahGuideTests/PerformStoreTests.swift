@@ -55,9 +55,20 @@ final class PerformStoreTests: XCTestCase {
         let store = makeStore()
         store.jumpToStage(.sai)
         XCTAssertEqual(store.currentStep.stage, .sai)
+        XCTAssertEqual(store.currentStage, .sai)
         XCTAssertEqual(store.currentStep.id, "start-sai")
         store.jumpToStage(.ihram)
         XCTAssertEqual(store.currentStep.id, "wash")
+        XCTAssertEqual(store.currentStage, .ihram)
+    }
+
+    func testPresentationsFollowCurrentStage() {
+        let store = makeStore()
+        store.jumpToStage(.halqTaqsir)
+        let rows = store.presentations(expandedStages: [.halqTaqsir])
+        XCTAssertEqual(rows.count, 4)
+        XCTAssertEqual(rows.filter(\.isCurrent).map(\.stage), [.halqTaqsir])
+        XCTAssertTrue(rows.first { $0.stage == .halqTaqsir }?.isExpanded ?? false)
     }
 
     func testIndexIsClamped() {

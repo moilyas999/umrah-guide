@@ -20,8 +20,10 @@ struct DuasView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     ScreenHeader(
                         title: "Duas",
-                        subtitle: "Short, well-known wording. Arabic and English meaning on every card. Nothing here is required on every lap or every leg."
+                        subtitle: "Short, well-known wording. Use the filter to show Arabic, how to say it, and meaning in any combination."
                     )
+
+                    DuaDisplayFilterBar()
 
                     DisclaimerBanner(compact: true)
 
@@ -29,7 +31,7 @@ struct DuasView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(occasion.title)
-                                    .font(.title2.weight(.bold))
+                                    .font(.title3.weight(.bold))
                                     .foregroundStyle(Theme.accent)
                                     .accessibilityAddTraits(.isHeader)
                                 Text(occasion.meaning)
@@ -48,7 +50,7 @@ struct DuasView: View {
                         .id(occasion)
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, Theme.horizontalPadding)
                 .padding(.vertical, 16)
             }
             .umrahScreenBackground()
@@ -76,32 +78,14 @@ private struct DuaRow: View {
     let dua: Dua
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(dua.title)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(Theme.ink)
-
-            Text(dua.arabic)
-                .font(.title2.weight(.medium))
-                .foregroundStyle(Theme.ink)
-                .multilineTextAlignment(.trailing)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .environment(\.layoutDirection, .rightToLeft)
-                .minimumScaleFactor(0.7)
-
-            Text(dua.meaning)
-                .font(.title3)
-                .foregroundStyle(Theme.ink)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .umrahCard()
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(dua.title). \(dua.meaning)")
-        .accessibilityHint("Opens the full dua with pronunciation and the source note")
-        .accessibilityAddTraits(.isButton)
+        DuaTextBlock(dua: dua, compact: true)
+            .umrahCard()
+            .accessibilityHint("Opens the full dua with the source note")
+            .accessibilityAddTraits(.isButton)
     }
 }
 
 #Preview {
     DuasView()
+        .environmentObject(DuaDisplayStore(defaults: UserDefaults(suiteName: "preview.duas") ?? .standard))
 }

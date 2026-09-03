@@ -18,7 +18,7 @@ struct MoreView: View {
                     } label: {
                         MoreRow(
                             title: "All duas",
-                            subtitle: "Browse by stage. Arabic, meaning, and an honest source note.",
+                            subtitle: "Browse by stage. Arabic, how to say it, meaning, and an honest source note.",
                             systemImage: "text.book.closed"
                         )
                     }
@@ -109,4 +109,5 @@ private struct MoreRow: View {
 #Preview {
     MoreView()
         .environmentObject(PerformStore(defaults: UserDefaults(suiteName: "preview.perform") ?? .standard))
+        .environmentObject(DuaDisplayStore(defaults: UserDefaults(suiteName: "preview.more") ?? .standard))
 }

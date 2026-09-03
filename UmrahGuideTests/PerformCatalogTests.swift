@@ -10,6 +10,7 @@ final class PerformCatalogTests: XCTestCase {
     func testEachStepHasOneToThreeDoNowSentences() {
         for step in PerformCatalog.steps {
             XCTAssertFalse(step.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "Title missing for \(step.id)")
+            XCTAssertFalse(step.actionSummary.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "Summary missing for \(step.id)")
             XCTAssertGreaterThanOrEqual(step.doNow.count, 1, "\(step.id) needs something to do now")
             XCTAssertLessThanOrEqual(step.doNow.count, 3, "\(step.id) dumps too much on one screen")
             for sentence in step.doNow {
@@ -33,17 +34,35 @@ final class PerformCatalogTests: XCTestCase {
         XCTAssertEqual(ranks, ranks.sorted(), "A pilgrim should never be sent backwards through the four stages")
     }
 
-    func testPrimaryDuasResolveAndStayShort() {
+    func testRelatedDuasResolveWithAllThreeFields() {
         var linked = 0
+        var seen = Set<String>()
         for step in PerformCatalog.steps {
-            guard let id = step.primaryDuaID else { continue }
-            linked += 1
-            let dua = DuaCatalog.dua(id: id)
-            XCTAssertNotNil(dua, "Step \(step.id) points at missing dua \(id)")
-            XCTAssertFalse(dua?.arabic.isEmpty ?? true)
-            XCTAssertFalse(dua?.meaning.isEmpty ?? true)
+            XCTAssertEqual(step.primaryDuaID, step.relatedDuaIDs.first)
+            for id in step.relatedDuaIDs {
+                linked += 1
+                seen.insert(id)
+                let dua = DuaCatalog.dua(id: id)
+                XCTAssertNotNil(dua, "Step \(step.id) points at missing dua \(id)")
+                XCTAssertFalse(dua?.arabic.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+                XCTAssertFalse(dua?.transliteration.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+                XCTAssertFalse(dua?.meaning.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+            }
         }
-        XCTAssertGreaterThanOrEqual(linked, 8, "Most rite moments should offer one dua in context")
+        XCTAssertGreaterThanOrEqual(linked, 8, "Most rite moments should offer duas in context")
+        XCTAssertGreaterThanOrEqual(seen.count, 8)
+    }
+
+    func testEveryStageExposesDuasInTheAccordion() {
+        for stage in PerformStage.allCases {
+            let rows = PerformAccordion.presentations(
+                stepIndex: 0,
+                doneIDs: [],
+                expandedStages: [stage]
+            )
+            let row = rows.first { $0.stage == stage }
+            XCTAssertFalse(row?.duas.isEmpty ?? true, "\(stage.rawValue) should list relevant duas when expanded")
+        }
     }
 
     func testHairStepExplainsWomenDoNotShave() {

@@ -32,8 +32,20 @@ final class PerformStore: ObservableObject {
         PerformCatalog.steps[stepIndex]
     }
 
+    var currentStage: PerformStage {
+        currentStep.stage
+    }
+
     var isFirst: Bool { stepIndex == 0 }
     var isLast: Bool { stepIndex >= PerformCatalog.steps.count - 1 }
+
+    func presentations(expandedStages: Set<PerformStage>) -> [PerformStagePresentation] {
+        PerformAccordion.presentations(
+            stepIndex: stepIndex,
+            doneIDs: doneIDs,
+            expandedStages: expandedStages
+        )
+    }
 
     var progress: Double {
         let total = PerformCatalog.steps.count

@@ -1,6 +1,6 @@
 import Foundation
 
-enum PerformStage: String, CaseIterable, Identifiable, Equatable {
+enum PerformStage: String, CaseIterable, Identifiable, Equatable, Hashable {
     case ihram
     case tawaf
     case sai
@@ -50,6 +50,8 @@ struct PerformStep: Identifiable, Equatable, Hashable {
     let id: String
     let stage: PerformStage
     let title: String
+    /// One-line collapsed-row summary of the action.
+    let actionSummary: String
     /// One to three short sentences of what to do right now.
     let doNow: [String]
     /// Optional plain-English gloss for a term used on this step.
@@ -57,5 +59,8 @@ struct PerformStep: Identifiable, Equatable, Hashable {
     let womenNote: String?
     /// One-line caution, not a lecture.
     let caution: String?
-    let primaryDuaID: String?
+    /// Duas shown when this step (or its stage) is expanded. First is the primary.
+    let relatedDuaIDs: [String]
+
+    var primaryDuaID: String? { relatedDuaIDs.first }
 }
