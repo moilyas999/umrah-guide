@@ -18,7 +18,7 @@ struct MoreView: View {
                     } label: {
                         MoreRow(
                             title: "All duas",
-                            subtitle: "Browse by stage. Arabic, how to say it, meaning, and an honest source note.",
+                            subtitle: "Browse by stage. Tap a title to open Arabic, how to say it, and meaning.",
                             systemImage: "text.book.closed"
                         )
                     }

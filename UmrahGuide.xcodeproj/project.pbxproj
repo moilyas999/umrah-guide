@@ -16,6 +16,7 @@
 		AA019F2F34835C69A2950581 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C54AC15B20358F98615D5DA /* ChecklistItem.swift */; };
 		65F5BA02601355019F044F00 /* Dua.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D52E51C0125473B1597C2F /* Dua.swift */; };
 		9D5797AD5CFB57D58AE19494 /* DuaDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D24EA2999F5A9FA4C1E4BA /* DuaDisplayOptions.swift */; };
+		B928F77101525937ADA27DA7 /* DuaExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C89FE88F759AA8C751D70 /* DuaExpansion.swift */; };
 		715A02BD7B555BA7A280734E /* RitualCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D12865F85301BDD82983 /* RitualCatalog.swift */; };
 		CE486847D9F05402AD224116 /* PerformCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6F52F9F35C544C9C70CFDE /* PerformCatalog.swift */; };
 		EAC466757CFD5A7DB19F1043 /* ChecklistCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */; };
@@ -28,6 +29,7 @@
 		67FFDEB26F5553D493B41CF0 /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A774545C2C915B499A1646AA /* SectionCard.swift */; };
 		B9868C4093645E3F88A6B2AC /* DuaTextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA635B2C2445B2F831660D9 /* DuaTextBlock.swift */; };
 		91B4454AE0625FEFB57B789A /* DuaDisplayFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82152974FEC5E2094EF08C3 /* DuaDisplayFilterBar.swift */; };
+		F141D1FD96955E008FE95D2C /* CollapsibleDuaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742457845E6153A180783BA1 /* CollapsibleDuaRow.swift */; };
 		4F4E7589099F58A79999DEAE /* PrayThisNowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC69C662375AFBA7D48168 /* PrayThisNowCard.swift */; };
 		C039B9CECB815463B812157C /* PerformUmrahView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */; };
 		3DE1063CDDA75B14BF47393A /* RitualStepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */; };
@@ -47,6 +49,7 @@
 		CEFC4173C51E5A7CB3C9301A /* PerformAccordionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD007A4DCA7C53219D8736CC /* PerformAccordionTests.swift */; };
 		F1E55C8F885A5F50A1A75E36 /* DuaCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C16C7D5D9F590EA5D38FBF /* DuaCatalogTests.swift */; };
 		6A2949E631955F1EA31C3E00 /* DuaDisplayStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509B31AEB0655B709BA479DD /* DuaDisplayStoreTests.swift */; };
+		1E65571A423856E4AD3D7466 /* DuaExpansionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00CE22F731545FA4E106ED /* DuaExpansionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,7 @@
 		6C54AC15B20358F98615D5DA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		B7D52E51C0125473B1597C2F /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
 		16D24EA2999F5A9FA4C1E4BA /* DuaDisplayOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaDisplayOptions.swift; sourceTree = "<group>"; };
+		D36C89FE88F759AA8C751D70 /* DuaExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaExpansion.swift; sourceTree = "<group>"; };
 		D4C7D12865F85301BDD82983 /* RitualCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualCatalog.swift; sourceTree = "<group>"; };
 		1A6F52F9F35C544C9C70CFDE /* PerformCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformCatalog.swift; sourceTree = "<group>"; };
 		94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCatalog.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		A774545C2C915B499A1646AA /* SectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
 		3CA635B2C2445B2F831660D9 /* DuaTextBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaTextBlock.swift; sourceTree = "<group>"; };
 		A82152974FEC5E2094EF08C3 /* DuaDisplayFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaDisplayFilterBar.swift; sourceTree = "<group>"; };
+		742457845E6153A180783BA1 /* CollapsibleDuaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleDuaRow.swift; sourceTree = "<group>"; };
 		F6FC69C662375AFBA7D48168 /* PrayThisNowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayThisNowCard.swift; sourceTree = "<group>"; };
 		6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformUmrahView.swift; sourceTree = "<group>"; };
 		049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualStepDetailView.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		DD007A4DCA7C53219D8736CC /* PerformAccordionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformAccordionTests.swift; sourceTree = "<group>"; };
 		02C16C7D5D9F590EA5D38FBF /* DuaCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaCatalogTests.swift; sourceTree = "<group>"; };
 		509B31AEB0655B709BA479DD /* DuaDisplayStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaDisplayStoreTests.swift; sourceTree = "<group>"; };
+		9A00CE22F731545FA4E106ED /* DuaExpansionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaExpansionTests.swift; sourceTree = "<group>"; };
 		A2A6107E7D93508180B3D31E /* UmrahGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UmrahGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E345E8AA81D65813896DE0C5 /* UmrahGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmrahGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +156,7 @@
 				DD007A4DCA7C53219D8736CC /* PerformAccordionTests.swift */,
 				02C16C7D5D9F590EA5D38FBF /* DuaCatalogTests.swift */,
 				509B31AEB0655B709BA479DD /* DuaDisplayStoreTests.swift */,
+				9A00CE22F731545FA4E106ED /* DuaExpansionTests.swift */,
 			);
 			path = UmrahGuideTests;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				6C54AC15B20358F98615D5DA /* ChecklistItem.swift */,
 				B7D52E51C0125473B1597C2F /* Dua.swift */,
 				16D24EA2999F5A9FA4C1E4BA /* DuaDisplayOptions.swift */,
+				D36C89FE88F759AA8C751D70 /* DuaExpansion.swift */,
 				53D52764D2565BDEB6B99020 /* PerformAccordion.swift */,
 				8573FA1B85DB52EF8455D16F /* PerformStep.swift */,
 				E039AB0133B057EDA86FF939 /* RitualStep.swift */,
@@ -235,6 +243,7 @@
 		847765916FBD50ADBAF08104 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				742457845E6153A180783BA1 /* CollapsibleDuaRow.swift */,
 				6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */,
 				A82152974FEC5E2094EF08C3 /* DuaDisplayFilterBar.swift */,
 				3CA635B2C2445B2F831660D9 /* DuaTextBlock.swift */,
@@ -399,6 +408,7 @@
 				AA019F2F34835C69A2950581 /* ChecklistItem.swift in Sources */,
 				65F5BA02601355019F044F00 /* Dua.swift in Sources */,
 				9D5797AD5CFB57D58AE19494 /* DuaDisplayOptions.swift in Sources */,
+				B928F77101525937ADA27DA7 /* DuaExpansion.swift in Sources */,
 				715A02BD7B555BA7A280734E /* RitualCatalog.swift in Sources */,
 				CE486847D9F05402AD224116 /* PerformCatalog.swift in Sources */,
 				EAC466757CFD5A7DB19F1043 /* ChecklistCatalog.swift in Sources */,
@@ -411,6 +421,7 @@
 				67FFDEB26F5553D493B41CF0 /* SectionCard.swift in Sources */,
 				B9868C4093645E3F88A6B2AC /* DuaTextBlock.swift in Sources */,
 				91B4454AE0625FEFB57B789A /* DuaDisplayFilterBar.swift in Sources */,
+				F141D1FD96955E008FE95D2C /* CollapsibleDuaRow.swift in Sources */,
 				4F4E7589099F58A79999DEAE /* PrayThisNowCard.swift in Sources */,
 				C039B9CECB815463B812157C /* PerformUmrahView.swift in Sources */,
 				3DE1063CDDA75B14BF47393A /* RitualStepDetailView.swift in Sources */,
@@ -435,6 +446,7 @@
 				CEFC4173C51E5A7CB3C9301A /* PerformAccordionTests.swift in Sources */,
 				F1E55C8F885A5F50A1A75E36 /* DuaCatalogTests.swift in Sources */,
 				6A2949E631955F1EA31C3E00 /* DuaDisplayStoreTests.swift in Sources */,
+				1E65571A423856E4AD3D7466 /* DuaExpansionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
