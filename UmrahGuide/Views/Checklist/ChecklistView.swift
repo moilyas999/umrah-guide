@@ -12,23 +12,27 @@ struct ChecklistView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    ScreenHeader(
-                        title: "Pack",
-                        subtitle: "Ihram and packing reminders. Open this from Perform without losing your place. Ticks stay on this iPhone only."
-                    )
+                    ScreenLead(subtitle: "Ihram and packing reminders. Ticks stay on this iPhone only.")
 
-                    progressCard
+                    progressBlock
 
-                    ForEach(ChecklistCategory.allCases) { category in
-                        categorySection(category)
+                    if total == 0 {
+                        EmptyState(
+                            title: "Nothing to pack",
+                            message: "This list is empty on this device."
+                        )
+                    } else {
+                        ForEach(ChecklistCategory.allCases) { category in
+                            categorySection(category)
+                        }
                     }
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
+                .padding(.horizontal, Theme.horizontalPadding)
+                .padding(.vertical, 12)
             }
             .umrahScreenBackground()
             .navigationTitle("Pack")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Reset") {
@@ -49,22 +53,28 @@ struct ChecklistView: View {
         }
     }
 
-    private var progressCard: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Packed and prepared")
-                .font(.headline)
+    private var progressBlock: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(progressTitle)
+                .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.ink)
-            Text("\(done) of \(total) items")
-                .font(.subheadline)
-                .foregroundStyle(Theme.muted)
             ProgressView(value: progress)
                 .tint(Theme.accent)
                 .accessibilityHidden(true)
         }
-        .umrahCard()
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Packed and prepared, \(done) of \(total) items")
+        .accessibilityLabel(progressTitle)
         .accessibilityValue(progressPercentLabel)
+    }
+
+    private var progressTitle: String {
+        if total == 0 {
+            return "No items"
+        }
+        if done == total {
+            return "All \(total) items packed"
+        }
+        return "\(done) of \(total) packed"
     }
 
     private var progressPercentLabel: String {
@@ -76,26 +86,33 @@ struct ChecklistView: View {
         let items = ChecklistCatalog.items.filter { $0.category == category }
         let checked = store.checkedCount(in: items)
 
-        return VStack(alignment: .leading, spacing: 12) {
+        return VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Label(category.title, systemImage: category.systemImage)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(Theme.accent)
+                Text(category.title)
+                    .font(.headline)
+                    .foregroundStyle(Theme.ink)
                 Spacer()
                 Text("\(checked)/\(items.count)")
-                    .font(.subheadline.weight(.medium))
+                    .font(.footnote)
                     .foregroundStyle(Theme.muted)
                     .accessibilityHidden(true)
             }
+            .padding(.bottom, 8)
             .accessibilityElement(children: .combine)
             .accessibilityAddTraits(.isHeader)
             .accessibilityLabel("\(category.title), \(checked) of \(items.count) checked")
 
-            VStack(spacing: 10) {
-                ForEach(items) { item in
+            VStack(spacing: 0) {
+                ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
                     ChecklistRow(item: item)
+                    if index < items.count - 1 {
+                        Divider()
+                            .background(Theme.hairline)
+                            .padding(.leading, 36)
+                    }
                 }
             }
+            .umrahCard()
         }
     }
 }
@@ -112,17 +129,17 @@ private struct ChecklistRow: View {
         } label: {
             HStack(alignment: .top, spacing: 12) {
                 Image(systemName: checked ? "checkmark.circle.fill" : "circle")
-                    .font(.title2)
+                    .font(.title3)
                     .foregroundStyle(checked ? Theme.accent : Theme.muted)
                     .accessibilityHidden(true)
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text(item.title)
-                        .font(.body.weight(.semibold))
+                        .font(.body.weight(.medium))
                         .foregroundStyle(Theme.ink)
                         .multilineTextAlignment(.leading)
                     Text(item.detail)
-                        .font(.subheadline)
+                        .font(.footnote)
                         .foregroundStyle(Theme.muted)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
@@ -130,7 +147,9 @@ private struct ChecklistRow: View {
 
                 Spacer(minLength: 0)
             }
-            .umrahCard()
+            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity, minHeight: Theme.minTap, alignment: .leading)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .combine)

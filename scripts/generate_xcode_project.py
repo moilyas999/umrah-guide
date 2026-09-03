@@ -12,6 +12,7 @@ PROJECT = ROOT / "UmrahGuide.xcodeproj"
 
 SWIFT_SOURCES = [
     "UmrahGuide/App/AppCopy.swift",
+    "UmrahGuide/App/AppNavigation.swift",
     "UmrahGuide/App/UmrahGuideApp.swift",
     "UmrahGuide/App/ContentView.swift",
     "UmrahGuide/Models/RitualStep.swift",
@@ -60,6 +61,7 @@ TESTS = [
     "UmrahGuideTests/DuaCatalogTests.swift",
     "UmrahGuideTests/DuaDisplayStoreTests.swift",
     "UmrahGuideTests/DuaExpansionTests.swift",
+    "UmrahGuideTests/AppNavigationTests.swift",
 ]
 
 
@@ -189,7 +191,7 @@ APP_KEYS = {
     "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
     "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
     "CODE_SIGN_STYLE": "Automatic",
-    "CURRENT_PROJECT_VERSION": "3",
+    "CURRENT_PROJECT_VERSION": "4",
     "ENABLE_PREVIEWS": "YES",
     "GENERATE_INFOPLIST_FILE": "YES",
     "INFOPLIST_KEY_CFBundleDisplayName": "Umrah Guide",
@@ -198,10 +200,11 @@ APP_KEYS = {
     "INFOPLIST_KEY_UIApplicationSceneManifest_Generation": "YES",
     "INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents": "YES",
     "INFOPLIST_KEY_UILaunchScreen_Generation": "YES",
+    "INFOPLIST_KEY_UIUserInterfaceStyle": "Light",
     "INFOPLIST_KEY_UISupportedInterfaceOrientations": '"UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"',
     "INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad": '"UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"',
     "LD_RUNPATH_SEARCH_PATHS": '("$(inherited)", "@executable_path/Frameworks", )',
-    "MARKETING_VERSION": "1.0",
+    "MARKETING_VERSION": "1.0.1",
     "PRODUCT_BUNDLE_IDENTIFIER": "ai.desklink.umrahguide",
     "PRODUCT_NAME": "UmrahGuide",
     "SUPPORTED_PLATFORMS": "iphoneos iphonesimulator",
@@ -216,10 +219,10 @@ APP_KEYS = {
 TEST_KEYS = {
     "BUNDLE_LOADER": '"$(TEST_HOST)"',
     "CODE_SIGN_STYLE": "Automatic",
-    "CURRENT_PROJECT_VERSION": "3",
+    "CURRENT_PROJECT_VERSION": "4",
     "GENERATE_INFOPLIST_FILE": "YES",
     "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
-    "MARKETING_VERSION": "1.0",
+    "MARKETING_VERSION": "1.0.1",
     "PRODUCT_BUNDLE_IDENTIFIER": "ai.desklink.umrahguide.tests",
     "PRODUCT_NAME": '"$(TARGET_NAME)"',
     "SUPPORTED_PLATFORMS": "iphoneos iphonesimulator",
@@ -230,7 +233,8 @@ TEST_KEYS = {
 }
 
 
-def write_colorset(path: Path, light: tuple[float, float, float], dark: tuple[float, float, float]) -> None:
+def write_colorset(path: Path, light: tuple[float, float, float]) -> None:
+    """Light-only color. The app forces UIUserInterfaceStyle = Light."""
     path.mkdir(parents=True, exist_ok=True)
     def comps(rgb):
         return {
@@ -244,11 +248,6 @@ def write_colorset(path: Path, light: tuple[float, float, float], dark: tuple[fl
         "colors": [
             {
                 "color": {"color-space": "srgb", "components": comps(light)},
-                "idiom": "universal",
-            },
-            {
-                "appearances": [{"appearance": "luminosity", "value": "dark"}],
-                "color": {"color-space": "srgb", "components": comps(dark)},
                 "idiom": "universal",
             },
         ],
@@ -280,17 +279,17 @@ def write_assets() -> None:
         + "\n"
     )
     colors = {
-        "AccentColor": ((0.106, 0.369, 0.271), (0.435, 0.796, 0.604)),
-        "AccentGreen": ((0.106, 0.369, 0.271), (0.435, 0.796, 0.604)),
-        "WarmGold": ((0.604, 0.455, 0.125), (0.878, 0.753, 0.416)),
-        "PageBackground": ((0.969, 0.973, 0.965), (0.055, 0.075, 0.067)),
-        "CardBackground": ((1.000, 1.000, 1.000), (0.110, 0.141, 0.125)),
-        "Ink": ((0.086, 0.098, 0.086), (0.953, 0.945, 0.918)),
-        "MutedInk": ((0.239, 0.271, 0.251), (0.761, 0.784, 0.765)),
-        "Caution": ((0.545, 0.180, 0.122), (0.941, 0.627, 0.565)),
+        "AccentColor": (0.145, 0.400, 0.306),
+        "AccentGreen": (0.145, 0.400, 0.306),
+        "WarmGold": (0.545, 0.420, 0.145),
+        "PageBackground": (0.973, 0.969, 0.961),
+        "CardBackground": (1.000, 1.000, 1.000),
+        "Ink": (0.102, 0.110, 0.106),
+        "MutedInk": (0.353, 0.373, 0.361),
+        "Caution": (0.545, 0.180, 0.122),
     }
-    for name, (light, dark) in colors.items():
-        write_colorset(assets / f"{name}.colorset", light, dark)
+    for name, light in colors.items():
+        write_colorset(assets / f"{name}.colorset", light)
 
 
 def write_project() -> None:

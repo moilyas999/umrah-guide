@@ -9,23 +9,24 @@ enum Theme {
     static let muted = Color("MutedInk")
     static let danger = Color("Caution")
 
-    static let cardRadius: CGFloat = 18
-    static let thumbHeight: CGFloat = 56
-    static let minTap: CGFloat = 52
+    static let cardRadius: CGFloat = 12
+    static let thumbHeight: CGFloat = 52
+    static let minTap: CGFloat = 48
     static let horizontalPadding: CGFloat = 20
     static let contentMaxWidth: CGFloat = 560
+    static let hairline = ink.opacity(0.08)
 }
 
 extension View {
     func umrahCard() -> some View {
         self
-            .padding(16)
+            .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Theme.card)
             .clipShape(RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous)
-                    .stroke(Theme.ink.opacity(0.06), lineWidth: 1)
+                    .stroke(Theme.hairline, lineWidth: 1)
             )
     }
 
@@ -61,11 +62,11 @@ struct ThumbPrimaryButton: View {
                     Image(systemName: systemImage)
                 }
             }
-            .font(.title3.weight(.bold))
+            .font(.headline)
             .frame(maxWidth: .infinity, minHeight: Theme.thumbHeight)
-            .foregroundStyle(Theme.page)
+            .foregroundStyle(Color.white)
             .background(enabled ? Theme.accent : Theme.muted.opacity(0.35))
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
         }
         .buttonStyle(.plain)
         .disabled(!enabled)
@@ -98,9 +99,9 @@ struct ThumbSecondaryButton: View {
             .frame(maxWidth: .infinity, minHeight: Theme.thumbHeight)
             .foregroundStyle(enabled ? Theme.ink : Theme.muted)
             .background(Theme.card)
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous)
                     .stroke(Theme.ink.opacity(0.12), lineWidth: 1)
             )
         }

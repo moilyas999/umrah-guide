@@ -17,42 +17,29 @@ struct DuasView: View {
     private var list: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
-                    ScreenHeader(
-                        title: "Duas",
-                        subtitle: "Tap a title to open that dua. Use the filter to show Arabic, how to say it, and meaning in any combination."
-                    )
+                VStack(alignment: .leading, spacing: 20) {
+                    ScreenLead(subtitle: "Tap a title to open it. Filter Arabic, how to say it, and meaning.")
 
                     DuaDisplayFilterBar()
 
-                    DisclaimerBanner(compact: true)
-
-                    ForEach(DuaOccasion.allCases) { occasion in
-                        VStack(alignment: .leading, spacing: 10) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(occasion.title)
-                                    .font(.title3.weight(.bold))
-                                    .foregroundStyle(Theme.accent)
-                                    .accessibilityAddTraits(.isHeader)
-                                Text(occasion.meaning)
-                                    .font(.body)
-                                    .foregroundStyle(Theme.muted)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
-
-                            ForEach(DuaCatalog.duas(for: occasion)) { dua in
-                                CollapsibleDuaRow(dua: dua, showsDetailLink: true, style: .card)
-                            }
+                    if DuaCatalog.duas.isEmpty {
+                        EmptyState(
+                            title: "No duas yet",
+                            message: "This list is empty on this device."
+                        )
+                    } else {
+                        ForEach(DuaOccasion.allCases) { occasion in
+                            occasionSection(occasion)
+                                .id(occasion)
                         }
-                        .id(occasion)
                     }
                 }
                 .padding(.horizontal, Theme.horizontalPadding)
-                .padding(.vertical, 16)
+                .padding(.vertical, 12)
             }
             .umrahScreenBackground()
             .navigationTitle("Duas")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .onAppear {
                 if let initialOccasion {
                     DispatchQueue.main.async {
@@ -60,6 +47,30 @@ struct DuasView: View {
                             proxy.scrollTo(initialOccasion, anchor: .top)
                         }
                     }
+                }
+            }
+        }
+    }
+
+    private func occasionSection(_ occasion: DuaOccasion) -> some View {
+        let duas = DuaCatalog.duas(for: occasion)
+        return VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(occasion.title)
+                    .font(.headline)
+                    .foregroundStyle(Theme.ink)
+                    .accessibilityAddTraits(.isHeader)
+                Text(occasion.meaning)
+                    .font(.footnote)
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            if duas.isEmpty {
+                EmptyState(title: "None here", message: "No duas in this group.")
+            } else {
+                ForEach(duas) { dua in
+                    CollapsibleDuaRow(dua: dua, showsDetailLink: true, style: .card)
                 }
             }
         }

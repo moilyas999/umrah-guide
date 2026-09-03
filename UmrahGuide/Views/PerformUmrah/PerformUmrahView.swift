@@ -3,7 +3,6 @@ import SwiftUI
 struct PerformUmrahView: View {
     @EnvironmentObject private var performStore: PerformStore
     @State private var expandedStages: Set<PerformStage> = []
-    @State private var showPack = false
     @State private var showLearnMore = false
     @State private var confirmRestart = false
 
@@ -21,7 +20,7 @@ struct PerformUmrahView: View {
         NavigationStack {
             ScrollViewReader { proxy in
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack(alignment: .leading, spacing: 14) {
                         progressHeader
                         DuaDisplayFilterBar()
                         accordionList
@@ -29,7 +28,7 @@ struct PerformUmrahView: View {
                     }
                     .padding(.horizontal, Theme.horizontalPadding)
                     .padding(.top, 8)
-                    .padding(.bottom, 24)
+                    .padding(.bottom, 20)
                     .umrahReadableWidth()
                 }
                 .umrahScreenBackground()
@@ -49,20 +48,6 @@ struct PerformUmrahView: View {
             }
             .navigationTitle("Perform")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        showPack = true
-                    } label: {
-                        Label("Pack", systemImage: "checklist")
-                    }
-                    .accessibilityHint("Opens the packing list. Your place here is saved.")
-                }
-            }
-            .sheet(isPresented: $showPack) {
-                ChecklistView()
-                    .presentationDragIndicator(.visible)
-            }
             .sheet(isPresented: $showLearnMore) {
                 NavigationStack {
                     RitualStepDetailView(step: RitualCatalog.step(id: performStore.currentStage.ritualID))
@@ -86,10 +71,14 @@ struct PerformUmrahView: View {
     }
 
     private var progressHeader: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text("Step \(performStore.stepIndex + 1) of \(PerformCatalog.steps.count)")
-                .font(.subheadline.weight(.semibold))
+                .font(.caption.weight(.semibold))
                 .foregroundStyle(Theme.muted)
+            Text(performStore.currentStep.title)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
             ProgressView(
                 value: Double(performStore.stepIndex + 1),
                 total: Double(PerformCatalog.steps.count)
@@ -106,7 +95,7 @@ struct PerformUmrahView: View {
     }
 
     private var accordionList: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 10) {
             ForEach(presentations) { presentation in
                 StageAccordionCard(
                     presentation: presentation,
@@ -134,7 +123,7 @@ struct PerformUmrahView: View {
             showLearnMore = true
         } label: {
             Text("Longer guide for \(performStore.currentStage.title)")
-                .font(.footnote.weight(.semibold))
+                .font(.footnote)
                 .foregroundStyle(Theme.muted)
                 .frame(minHeight: 44)
         }
@@ -143,14 +132,14 @@ struct PerformUmrahView: View {
     }
 
     private var footer: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 4) {
             if performStore.isLast {
                 ThumbPrimaryButton("Start over", systemImage: "arrow.counterclockwise") {
                     confirmRestart = true
                 }
                 quietBackButton
             } else {
-                ThumbPrimaryButton("Next", systemImage: "chevron.forward") {
+                ThumbPrimaryButton("Next") {
                     performStore.advance()
                 }
                 quietBackButton
@@ -163,7 +152,7 @@ struct PerformUmrahView: View {
         .background(Theme.page)
         .overlay(alignment: .top) {
             Rectangle()
-                .fill(Theme.ink.opacity(0.06))
+                .fill(Theme.hairline)
                 .frame(height: 1)
         }
         .accessibilityElement(children: .contain)

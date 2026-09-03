@@ -48,12 +48,7 @@ struct LegalDocumentView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                Text(document.title)
-                    .font(.largeTitle.weight(.semibold))
-                    .foregroundStyle(Theme.ink)
-                    .accessibilityAddTraits(.isHeader)
-
+            VStack(alignment: .leading, spacing: 14) {
                 ForEach(Array(document.paragraphs.enumerated()), id: \.offset) { _, paragraph in
                     Text(paragraph)
                         .font(.body)
@@ -61,8 +56,8 @@ struct LegalDocumentView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 16)
+            .padding(.horizontal, Theme.horizontalPadding)
+            .padding(.vertical, 12)
         }
         .umrahScreenBackground()
         .navigationTitle(document.title)
