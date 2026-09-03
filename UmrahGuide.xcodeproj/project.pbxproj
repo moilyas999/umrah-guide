@@ -1,0 +1,631 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0CC42CB332C55813950A922A /* AppCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A006F6422065469A03F6928 /* AppCopy.swift */; };
+		61AD23D6BDA258C3A4518EC9 /* UmrahGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21D283F3BBC5245BE8A6F3A /* UmrahGuideApp.swift */; };
+		98D61BA1AFB950A39C7BF07C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD569A70D37257BEA985A14C /* ContentView.swift */; };
+		4B42C166467956D690F6F592 /* RitualStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E039AB0133B057EDA86FF939 /* RitualStep.swift */; };
+		AA019F2F34835C69A2950581 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C54AC15B20358F98615D5DA /* ChecklistItem.swift */; };
+		65F5BA02601355019F044F00 /* Dua.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D52E51C0125473B1597C2F /* Dua.swift */; };
+		715A02BD7B555BA7A280734E /* RitualCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D12865F85301BDD82983 /* RitualCatalog.swift */; };
+		EAC466757CFD5A7DB19F1043 /* ChecklistCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */; };
+		FFDC28B645B55E93A8A90DFF /* DuaCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554049EFFB7F50E7816A63E1 /* DuaCatalog.swift */; };
+		AF835CF0B2E05A5AA7B1FBBE /* ChecklistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C4538E204502982375D05 /* ChecklistStore.swift */; };
+		DF6D40B96805548294D3BE5D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD82421E615CDDB95BB2A2 /* Theme.swift */; };
+		088029E03115501090E1E382 /* DisclaimerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */; };
+		67FFDEB26F5553D493B41CF0 /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A774545C2C915B499A1646AA /* SectionCard.swift */; };
+		C039B9CECB815463B812157C /* PerformUmrahView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */; };
+		3DE1063CDDA75B14BF47393A /* RitualStepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */; };
+		73C067EAA27A568BA4183CB8 /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E09DFB40BE58D494508640 /* ChecklistView.swift */; };
+		20A2E09CE757572DAFD88D1F /* DuasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DBF0DD158F528EB3F92840 /* DuasView.swift */; };
+		B5D7895D08F35364B712B761 /* DuaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47363FD9E75998B997620D /* DuaDetailView.swift */; };
+		B7F446ECAD315449BC55FEFE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777E56B6EDB5F65B5F4B268 /* AboutView.swift */; };
+		F8F1B4C1937050A28AE85BC1 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E40AC497AA5773A768A8E9 /* LegalDocumentView.swift */; };
+		219DFE9D15E25289A0A95C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2DA46FDAEF524FAD204061 /* Assets.xcassets */; };
+		3F70238F402B5AFB978EBE06 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 01558DE754AE5E19815C9DC1 /* PrivacyInfo.xcprivacy */; };
+		3A9154F960F352F3B53DEED7 /* ChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC2F2DC6E456DFB136E460 /* ChecklistStoreTests.swift */; };
+		A09B9F7991E05F22B92E61F6 /* RitualCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA1269AA1A15E08B18AF113 /* RitualCatalogTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAC6A71CBA4F5B50BA5B5B57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 788830265BFA5BC3A32A588A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFFA8AB2076E5645AB1952CE;
+			remoteInfo = UmrahGuide;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A006F6422065469A03F6928 /* AppCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCopy.swift; sourceTree = "<group>"; };
+		F21D283F3BBC5245BE8A6F3A /* UmrahGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmrahGuideApp.swift; sourceTree = "<group>"; };
+		CD569A70D37257BEA985A14C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E039AB0133B057EDA86FF939 /* RitualStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualStep.swift; sourceTree = "<group>"; };
+		6C54AC15B20358F98615D5DA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		B7D52E51C0125473B1597C2F /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
+		D4C7D12865F85301BDD82983 /* RitualCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualCatalog.swift; sourceTree = "<group>"; };
+		94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCatalog.swift; sourceTree = "<group>"; };
+		554049EFFB7F50E7816A63E1 /* DuaCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaCatalog.swift; sourceTree = "<group>"; };
+		7D4C4538E204502982375D05 /* ChecklistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistStore.swift; sourceTree = "<group>"; };
+		43DD82421E615CDDB95BB2A2 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerBanner.swift; sourceTree = "<group>"; };
+		A774545C2C915B499A1646AA /* SectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
+		6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformUmrahView.swift; sourceTree = "<group>"; };
+		049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualStepDetailView.swift; sourceTree = "<group>"; };
+		A3E09DFB40BE58D494508640 /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
+		36DBF0DD158F528EB3F92840 /* DuasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuasView.swift; sourceTree = "<group>"; };
+		7B47363FD9E75998B997620D /* DuaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaDetailView.swift; sourceTree = "<group>"; };
+		4777E56B6EDB5F65B5F4B268 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		60E40AC497AA5773A768A8E9 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
+		8E2DA46FDAEF524FAD204061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01558DE754AE5E19815C9DC1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		62AC2F2DC6E456DFB136E460 /* ChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistStoreTests.swift; sourceTree = "<group>"; };
+		3DA1269AA1A15E08B18AF113 /* RitualCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualCatalogTests.swift; sourceTree = "<group>"; };
+		A2A6107E7D93508180B3D31E /* UmrahGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UmrahGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E345E8AA81D65813896DE0C5 /* UmrahGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmrahGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6993A59180D05874A9A836A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CF109925A32501F87E17B64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16F1BB505D5D5C36A5730F01 = {
+			isa = PBXGroup;
+			children = (
+				43FD52FBEC34582EAC886B7A /* UmrahGuide */,
+				9D1BB361598F557A8059CD4B /* UmrahGuideTests */,
+				AF6958E061555CA8BC8F10A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF6958E061555CA8BC8F10A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6107E7D93508180B3D31E /* UmrahGuide.app */,
+				E345E8AA81D65813896DE0C5 /* UmrahGuideTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D1BB361598F557A8059CD4B /* UmrahGuideTests */ = {
+			isa = PBXGroup;
+			children = (
+				62AC2F2DC6E456DFB136E460 /* ChecklistStoreTests.swift */,
+				3DA1269AA1A15E08B18AF113 /* RitualCatalogTests.swift */,
+			);
+			path = UmrahGuideTests;
+			sourceTree = "<group>";
+		};
+		DB650E553EC7554684822B3A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A006F6422065469A03F6928 /* AppCopy.swift */,
+				CD569A70D37257BEA985A14C /* ContentView.swift */,
+				F21D283F3BBC5245BE8A6F3A /* UmrahGuideApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9F8EAB5D233B5708B13C065D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */,
+				554049EFFB7F50E7816A63E1 /* DuaCatalog.swift */,
+				D4C7D12865F85301BDD82983 /* RitualCatalog.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8C7086B8148B53648185158F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6C54AC15B20358F98615D5DA /* ChecklistItem.swift */,
+				B7D52E51C0125473B1597C2F /* Dua.swift */,
+				E039AB0133B057EDA86FF939 /* RitualStep.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA9829A5A28356A180382759 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C4538E204502982375D05 /* ChecklistStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		CF5F6C5FF5935B21A8DC37AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E2DA46FDAEF524FAD204061 /* Assets.xcassets */,
+				01558DE754AE5E19815C9DC1 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4466D2FE65257BD948A1194 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				43DD82421E615CDDB95BB2A2 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		674D847E0D4854288DA51897 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				4777E56B6EDB5F65B5F4B268 /* AboutView.swift */,
+				60E40AC497AA5773A768A8E9 /* LegalDocumentView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		DA873273727B5C198B15110B /* Checklist */ = {
+			isa = PBXGroup;
+			children = (
+				A3E09DFB40BE58D494508640 /* ChecklistView.swift */,
+			);
+			path = Checklist;
+			sourceTree = "<group>";
+		};
+		847765916FBD50ADBAF08104 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */,
+				A774545C2C915B499A1646AA /* SectionCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		429040679F695EE385ABDCE4 /* Duas */ = {
+			isa = PBXGroup;
+			children = (
+				7B47363FD9E75998B997620D /* DuaDetailView.swift */,
+				36DBF0DD158F528EB3F92840 /* DuasView.swift */,
+			);
+			path = Duas;
+			sourceTree = "<group>";
+		};
+		C32859B0956D515EABCCE6FB /* PerformUmrah */ = {
+			isa = PBXGroup;
+			children = (
+				6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */,
+				049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */,
+			);
+			path = PerformUmrah;
+			sourceTree = "<group>";
+		};
+		007AABF73C0B539AA2505635 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				674D847E0D4854288DA51897 /* About */,
+				DA873273727B5C198B15110B /* Checklist */,
+				847765916FBD50ADBAF08104 /* Components */,
+				429040679F695EE385ABDCE4 /* Duas */,
+				C32859B0956D515EABCCE6FB /* PerformUmrah */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43FD52FBEC34582EAC886B7A /* UmrahGuide */ = {
+			isa = PBXGroup;
+			children = (
+				DB650E553EC7554684822B3A /* App */,
+				9F8EAB5D233B5708B13C065D /* Data */,
+				8C7086B8148B53648185158F /* Models */,
+				FA9829A5A28356A180382759 /* Persistence */,
+				CF5F6C5FF5935B21A8DC37AB /* Resources */,
+				D4466D2FE65257BD948A1194 /* Theme */,
+				007AABF73C0B539AA2505635 /* Views */,
+			);
+			path = UmrahGuide;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFFA8AB2076E5645AB1952CE /* UmrahGuide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E05722B639352CABB0B658F /* Build configuration list for PBXNativeTarget "UmrahGuide" */;
+			buildPhases = (
+				CA26C2ACC41F5269A314343E /* Sources */,
+				6993A59180D05874A9A836A2 /* Frameworks */,
+				DD2FEF4B3E895D8EAD31FD0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UmrahGuide;
+			productName = UmrahGuide;
+			productReference = A2A6107E7D93508180B3D31E /* UmrahGuide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F200BD504E0F56C3AE592DB3 /* UmrahGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53917B9BE9E353249BF7C7F6 /* Build configuration list for PBXNativeTarget "UmrahGuideTests" */;
+			buildPhases = (
+				57963BEC774F5317874CF09D /* Sources */,
+				2CF109925A32501F87E17B64 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E77E09DD0865B19A61E376C /* PBXTargetDependency */,
+			);
+			name = UmrahGuideTests;
+			productName = UmrahGuideTests;
+			productReference = E345E8AA81D65813896DE0C5 /* UmrahGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		788830265BFA5BC3A32A588A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					CFFA8AB2076E5645AB1952CE = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F200BD504E0F56C3AE592DB3 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = CFFA8AB2076E5645AB1952CE;
+					};
+				};
+			};
+			buildConfigurationList = 033B9EA9AB0857D9A0AB3C74 /* Build configuration list for PBXProject "UmrahGuide" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16F1BB505D5D5C36A5730F01;
+			productRefGroup = AF6958E061555CA8BC8F10A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFFA8AB2076E5645AB1952CE /* UmrahGuide */,
+				F200BD504E0F56C3AE592DB3 /* UmrahGuideTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD2FEF4B3E895D8EAD31FD0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				219DFE9D15E25289A0A95C5E /* Assets.xcassets in Resources */,
+				3F70238F402B5AFB978EBE06 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA26C2ACC41F5269A314343E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CC42CB332C55813950A922A /* AppCopy.swift in Sources */,
+				61AD23D6BDA258C3A4518EC9 /* UmrahGuideApp.swift in Sources */,
+				98D61BA1AFB950A39C7BF07C /* ContentView.swift in Sources */,
+				4B42C166467956D690F6F592 /* RitualStep.swift in Sources */,
+				AA019F2F34835C69A2950581 /* ChecklistItem.swift in Sources */,
+				65F5BA02601355019F044F00 /* Dua.swift in Sources */,
+				715A02BD7B555BA7A280734E /* RitualCatalog.swift in Sources */,
+				EAC466757CFD5A7DB19F1043 /* ChecklistCatalog.swift in Sources */,
+				FFDC28B645B55E93A8A90DFF /* DuaCatalog.swift in Sources */,
+				AF835CF0B2E05A5AA7B1FBBE /* ChecklistStore.swift in Sources */,
+				DF6D40B96805548294D3BE5D /* Theme.swift in Sources */,
+				088029E03115501090E1E382 /* DisclaimerBanner.swift in Sources */,
+				67FFDEB26F5553D493B41CF0 /* SectionCard.swift in Sources */,
+				C039B9CECB815463B812157C /* PerformUmrahView.swift in Sources */,
+				3DE1063CDDA75B14BF47393A /* RitualStepDetailView.swift in Sources */,
+				73C067EAA27A568BA4183CB8 /* ChecklistView.swift in Sources */,
+				20A2E09CE757572DAFD88D1F /* DuasView.swift in Sources */,
+				B5D7895D08F35364B712B761 /* DuaDetailView.swift in Sources */,
+				B7F446ECAD315449BC55FEFE /* AboutView.swift in Sources */,
+				F8F1B4C1937050A28AE85BC1 /* LegalDocumentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57963BEC774F5317874CF09D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9154F960F352F3B53DEED7 /* ChecklistStoreTests.swift in Sources */,
+				A09B9F7991E05F22B92E61F6 /* RitualCatalogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E77E09DD0865B19A61E376C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFFA8AB2076E5645AB1952CE /* UmrahGuide */;
+			targetProxy = AAC6A71CBA4F5B50BA5B5B57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B02AA4F3EED7519BA97463B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)", );
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = targeted;
+			};
+			name = Debug;
+		};
+		55F4FC9603A35F56B09F2344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD21908A893059E7964E71F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Umrah Guide";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", );
+				MARKETING_VERSION = "1.0";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.desklink.umrahguide";
+				PRODUCT_NAME = UmrahGuide;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		0FB058F135AC5724B5640D74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Umrah Guide";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", );
+				MARKETING_VERSION = "1.0";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.desklink.umrahguide";
+				PRODUCT_NAME = UmrahGuide;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+		3335FD69A3375C738516DFC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+				MARKETING_VERSION = "1.0";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.desklink.umrahguide.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UmrahGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UmrahGuide";
+			};
+			name = Debug;
+		};
+		564C358695A15B3BA99BAD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+				MARKETING_VERSION = "1.0";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.desklink.umrahguide.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = "5.0";
+				TARGETED_DEVICE_FAMILY = "1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UmrahGuide.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UmrahGuide";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		033B9EA9AB0857D9A0AB3C74 /* Build configuration list for PBXProject "UmrahGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B02AA4F3EED7519BA97463B6 /* Debug */,
+				55F4FC9603A35F56B09F2344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E05722B639352CABB0B658F /* Build configuration list for PBXNativeTarget "UmrahGuide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD21908A893059E7964E71F5 /* Debug */,
+				0FB058F135AC5724B5640D74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53917B9BE9E353249BF7C7F6 /* Build configuration list for PBXNativeTarget "UmrahGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3335FD69A3375C738516DFC0 /* Debug */,
+				564C358695A15B3BA99BAD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 788830265BFA5BC3A32A588A /* Project object */;
+}
