@@ -147,7 +147,7 @@ enum DuaCatalog {
         ),
         Dua(
             id: "general.forgiveness",
-            occasion: .general,
+            occasion: .personal,
             title: "Pardon",
             arabic: "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
             transliteration: "Allahumma innaka ‘afuwwun tuhibbul-‘afwa fa‘fu ‘anni.",
@@ -158,7 +158,7 @@ enum DuaCatalog {
         ),
         Dua(
             id: "general.rabbighfir",
-            occasion: .general,
+            occasion: .personal,
             title: "Forgiveness",
             arabic: "رَبِّ اغْفِرْ لِي",
             transliteration: "Rabbighfir li.",
@@ -169,7 +169,7 @@ enum DuaCatalog {
         ),
         Dua(
             id: "general.parents",
-            occasion: .general,
+            occasion: .personal,
             title: "For your parents",
             arabic: "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
             transliteration: "Rabbi irhamhuma kama rabbayani saghira.",
@@ -180,7 +180,7 @@ enum DuaCatalog {
         ),
         Dua(
             id: "general.ummah",
-            occasion: .general,
+            occasion: .personal,
             title: "For the believers",
             arabic: "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ",
             transliteration: "Rabbana ighfir lana wa li-ikhwanina alladhina sabaquna bil-iman.",
@@ -191,7 +191,7 @@ enum DuaCatalog {
         ),
         Dua(
             id: "general.ease",
-            occasion: .general,
+            occasion: .personal,
             title: "Ease",
             arabic: "اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا",
             transliteration: "Allahumma la sahla illa ma ja‘altahu sahla, wa anta taj‘alul-hazna idha shi'ta sahla.",
@@ -202,7 +202,7 @@ enum DuaCatalog {
         ),
         Dua(
             id: "general.gratitude",
-            occasion: .general,
+            occasion: .personal,
             title: "Gratitude",
             arabic: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
             transliteration: "Alhamdulillahi rabbil-‘alamin.",
@@ -210,6 +210,105 @@ enum DuaCatalog {
             whenToSay: "After a circuit, after sa'i, after the hair cut, or any time you want to give thanks.",
             sourceKind: .quran,
             sourceNote: "Qur'an 1:2. The wording is the verse."
+        ),
+        Dua(
+            id: "personal.provision",
+            occasion: .personal,
+            title: "Dua for provision",
+            arabic: "رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ",
+            transliteration: "Rabbi inni lima anzalta ilayya min khayrin faqir.",
+            meaning: "My Lord, I am in need of whatever good You send down to me.",
+            whenToSay: "When you ask for rizq — lawful provision, work, or any good Allah may send.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 28:24. The prayer of Musa after he arrived in Madyan in need."
+        ),
+        Dua(
+            id: "personal.protection",
+            occasion: .personal,
+            title: "Dua for protection",
+            arabic: "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+            transliteration: "A‘udhu bi kalimatillahit-tammati min sharri ma khalaq.",
+            meaning: "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+            whenToSay: "At night, when you feel unsafe, or any time you want protection.",
+            sourceKind: .wellKnownAuthentic,
+            sourceNote: "Well-known authentic wording for seeking protection. Often remembered when settling at night. No book number is printed here."
+        ),
+        Dua(
+            id: "personal.guidance",
+            occasion: .personal,
+            title: "Dua for guidance",
+            arabic: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+            transliteration: "Ihdinas-siratal-mustaqim.",
+            meaning: "Guide us to the straight path.",
+            whenToSay: "Any time you need direction — in worship, a decision, or daily life.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 1:6. The wording is the verse."
+        ),
+        Dua(
+            id: "personal.family",
+            occasion: .personal,
+            title: "Dua for family",
+            arabic: "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+            transliteration: "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a‘yunin waj‘alna lil-muttaqina imama.",
+            meaning: "Our Lord, grant us comfort in our spouses and our children, and make us a model for those who are mindful of You.",
+            whenToSay: "When you pray for a spouse, children, or the whole household.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 25:74. The wording is the verse."
+        ),
+        Dua(
+            id: "personal.health",
+            occasion: .personal,
+            title: "Dua for health",
+            arabic: "أَذْهِبِ الْبَأْسَ رَبَّ النَّاسِ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ",
+            transliteration: "Adhhibil-ba'sa rabban-nas, ishfi antash-shafi, la shifa'a illa shifa'uk.",
+            meaning: "Remove the harm, Lord of mankind. Heal — You are the Healer. There is no healing except Your healing.",
+            whenToSay: "When you or someone you love is unwell.",
+            sourceKind: .wellKnownAuthentic,
+            sourceNote: "Well-known authentic wording for seeking healing. No book number is printed here."
+        ),
+        Dua(
+            id: "personal.travel",
+            occasion: .personal,
+            title: "Dua for travel safety",
+            arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ",
+            transliteration: "Subhanalladhi sakhkhara lana hadha wa ma kunna lahu muqrinin. Wa inna ila rabbina la-munqalibun.",
+            meaning: "Glory be to the One who has subjected this to us, for we could not have done it on our own. And to our Lord we will surely return.",
+            whenToSay: "When you board a vehicle or set out on a journey — including travel for Umrah.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 43:13–14. Reciting this when setting out is a well-known practice. The verse citation is for the Qur'an text only."
+        ),
+        Dua(
+            id: "personal.anxiety",
+            occasion: .personal,
+            title: "Dua for anxiety",
+            arabic: "رَبِّ اشْرَحْ لِي صَدْرِي",
+            transliteration: "Rabbi ishrah li sadri.",
+            meaning: "My Lord, expand my chest for me.",
+            whenToSay: "When worry tightens your chest, or you need calm before a hard moment.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 20:25. The opening of the prayer of Musa asking for ease and composure."
+        ),
+        Dua(
+            id: "personal.ending",
+            occasion: .personal,
+            title: "Dua for a good ending",
+            arabic: "تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ",
+            transliteration: "Tawaffani musliman wa alhiqni bis-salihin.",
+            meaning: "Let me die as a Muslim, and join me with the righteous.",
+            whenToSay: "Any time you ask Allah for a good end and a righteous company.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 12:101. From the prayer of Yusuf."
+        ),
+        Dua(
+            id: "personal.knowledge",
+            occasion: .personal,
+            title: "Dua for knowledge",
+            arabic: "رَبِّ زِدْنِي عِلْمًا",
+            transliteration: "Rabbi zidni ‘ilma.",
+            meaning: "My Lord, increase me in knowledge.",
+            whenToSay: "Before study, before a lesson, or whenever you want beneficial knowledge.",
+            sourceKind: .quran,
+            sourceNote: "Qur'an 20:114. The wording is the verse."
         )
     ]
 
@@ -222,8 +321,27 @@ enum DuaCatalog {
     }
 
     static func duas(forStage stage: PerformStage) -> [Dua] {
-        duas.filter { $0.occasion.performStage == stage || $0.occasion == .general }
+        duas.filter { $0.occasion.performStage == stage }
     }
+
+    /// Existing anytime duas plus the Personal / Everyday catalog.
+    static let personalEverydayIDs: [String] = [
+        "general.forgiveness",
+        "general.rabbighfir",
+        "general.parents",
+        "general.ummah",
+        "general.ease",
+        "general.gratitude",
+        "personal.provision",
+        "personal.protection",
+        "personal.guidance",
+        "personal.family",
+        "personal.health",
+        "personal.travel",
+        "personal.anxiety",
+        "personal.ending",
+        "personal.knowledge"
+    ]
 
     static let requiredIDs: [String] = [
         "talbiyah",
@@ -234,11 +352,6 @@ enum DuaCatalog {
         "zamzam.ask",
         "sai.safa.verse",
         "sai.hill.dhikr",
-        "halq.accept",
-        "general.forgiveness",
-        "general.parents",
-        "general.ummah",
-        "general.ease",
-        "general.gratitude"
-    ]
+        "halq.accept"
+    ] + personalEverydayIDs
 }

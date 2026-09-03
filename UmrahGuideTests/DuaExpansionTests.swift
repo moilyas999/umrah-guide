@@ -109,6 +109,24 @@ final class DuaExpansionTests: XCTestCase {
             XCTAssertTrue(rows.allSatisfy { !$0.isExpanded })
             XCTAssertTrue(rows.allSatisfy { $0.label == occasion.title })
         }
+
+        let personal = DuaCatalog.duas(for: .personal)
+        XCTAssertEqual(personal.count, DuaCatalog.personalEverydayIDs.count)
+        let personalRows = DuaExpansion.presentations(
+            duas: personal,
+            expandedIDs: DuaExpansion.defaultExpandedIDs(for: personal),
+            options: .default
+        )
+        XCTAssertTrue(personalRows.allSatisfy { !$0.isExpanded })
+        XCTAssertTrue(personalRows.allSatisfy { $0.label == "Personal / Everyday" })
+        XCTAssertEqual(
+            DuaExpansion.collapsedTitle(for: DuaCatalog.dua(id: "personal.provision")!),
+            "Dua for provision"
+        )
+        XCTAssertEqual(
+            DuaExpansion.collapsedTitle(for: DuaCatalog.dua(id: "general.forgiveness")!),
+            "Dua for Pardon"
+        )
     }
 
     func testPerformStepListsOnlyThatStepsDuasAndTheyStartCollapsed() {
