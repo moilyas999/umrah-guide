@@ -7,23 +7,32 @@ struct DuaDetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 Text(dua.title)
-                    .font(.largeTitle.weight(.semibold))
+                    .font(.largeTitle.weight(.bold))
                     .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
                     .accessibilityAddTraits(.isHeader)
 
-                Text(dua.occasion.title)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(Theme.accent)
-                    .accessibilityLabel("Occasion: \(dua.occasion.title)")
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(dua.occasion.title)
+                        .font(.headline)
+                        .foregroundStyle(Theme.accent)
+                    Text(dua.occasion.meaning)
+                        .font(.body)
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel("Occasion: \(dua.occasion.title). \(dua.occasion.meaning)")
 
                 LabeledSection(title: "Arabic", systemImage: "textformat.alt") {
                     Text(dua.arabic)
-                        .font(.title2)
+                        .font(.title.weight(.medium))
                         .foregroundStyle(Theme.ink)
                         .multilineTextAlignment(.trailing)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .environment(\.layoutDirection, .rightToLeft)
                         .textSelection(.enabled)
+                        .minimumScaleFactor(0.7)
                 }
                 .accessibilityElement(children: .combine)
                 .accessibilityLabel("Arabic. \(dua.transliteration)")
@@ -38,7 +47,7 @@ struct DuaDetailView: View {
 
                 LabeledSection(title: "Meaning", systemImage: "quote.closing") {
                     Text(dua.meaning)
-                        .font(.body)
+                        .font(.title3)
                         .foregroundStyle(Theme.ink)
                 }
 

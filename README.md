@@ -4,7 +4,7 @@ Independent iOS app from **DeskLink.ai** (Mohammed Ilyas). Offline educational c
 
 - **Display name:** Umrah Guide
 - **Bundle ID:** `ai.desklink.umrahguide`
-- **Version:** 1.0 (build 1)
+- **Version:** 1.0 (build 3)
 - **Devices:** iPhone, iOS 17 or later
 - **Signing:** Automatic. Select your Apple Development Team in Xcode. This repository does not contain an Apple Team ID.
 
@@ -38,10 +38,9 @@ Export compliance: the target sets `ITSAppUsesNonExemptEncryption` to `NO`. The 
 
 | Tab | Contents |
 | --- | --- |
-| Perform Umrah | Ihram, Tawaf, Sa'i, Halq/Taqsir — what to do, common mistakes, when women differ |
-| Checklist | Ihram and packing items, stored in on-device `UserDefaults` |
-| Duas | Talbiyah, Tawaf, and Sa'i wording with honest source notes (no invented hadith numbers) |
-| About | DeskLink.ai, educational disclaimer, in-app privacy and support |
+| Perform | Linear flow: one next action at a time through ihram, tawaf, sa'i, and cutting the hair. Huge type, a Next button, optional “I've done this.” Pack and duas open as sheets so you do not lose your place. |
+| Pack | Ihram and packing items, stored in on-device `UserDefaults` |
+| More | All duas (by stage, plus general), About, and a reset for your Perform place |
 
 Guidance is high-level Sunni majority practice. It is **not a fatwa**. Users are told to consult a qualified scholar.
 
@@ -51,6 +50,9 @@ The **UmrahGuide** scheme includes **UmrahGuideTests**:
 
 - Checklist ticks persist across a fresh `ChecklistStore` using an isolated `UserDefaults` suite.
 - Ritual catalog contains Ihram, Tawaf, Sa'i, and Halq/Taqsir, each with the required sections.
+- Perform catalog is a 16-step linear walk; each step has 1–3 short “do now” sentences.
+- Perform place and “I've done this” ticks persist in an isolated `UserDefaults` suite.
+- Dua catalog covers ihram, the Sacred Mosque, first sight of the Kaaba, tawaf (including Rabbana atina), Maqam Ibrahim, Zamzam, sa'i, the hair rite, and general duas. Every card has Arabic, English meaning, and an honest source note.
 
 On a Mac: Product → Test, or:
 

@@ -65,32 +65,48 @@ struct RitualStepDetailView: View {
 
     @ViewBuilder
     private var relatedDuas: some View {
-        if let occasion = occasionForStep {
-            let matches = DuaCatalog.duas(for: occasion)
-            if !matches.isEmpty {
-                LabeledSection(title: "Related duas", systemImage: "text.book.closed") {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Open the Duas tab for Arabic, transliteration, and source notes. Nothing here is a required script for every circuit or leg.")
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.muted)
+        let matches = relatedDuasForStep
+        if !matches.isEmpty {
+            LabeledSection(title: "Related duas", systemImage: "text.book.closed") {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Use Perform for one dua at a time. Nothing here is a required script for every circuit or leg.")
+                        .font(.body)
+                        .foregroundStyle(Theme.muted)
 
-                        ForEach(matches) { dua in
-                            Text(dua.title)
-                                .font(.body.weight(.medium))
-                                .foregroundStyle(Theme.ink)
+                    ForEach(matches) { dua in
+                        NavigationLink {
+                            DuaDetailView(dua: dua)
+                        } label: {
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(dua.title)
+                                    .font(.body.weight(.semibold))
+                                    .foregroundStyle(Theme.ink)
+                                Text(dua.meaning)
+                                    .font(.subheadline)
+                                    .foregroundStyle(Theme.muted)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
+                        .buttonStyle(.plain)
                     }
                 }
             }
         }
     }
 
-    private var occasionForStep: DuaOccasion? {
-        switch step.id {
-        case .ihram: return .ihram
-        case .tawaf: return .tawaf
-        case .sai: return .sai
-        case .halqTaqsir: return nil
+    private var relatedDuasForStep: [Dua] {
+        DuaCatalog.duas.filter { dua in
+            switch step.id {
+            case .ihram:
+                return dua.occasion == .ihram
+            case .tawaf:
+                return [.enteringHaram, .firstSightKaaba, .tawaf, .maqamIbrahim, .zamzam].contains(dua.occasion)
+            case .sai:
+                return dua.occasion == .sai
+            case .halqTaqsir:
+                return dua.occasion == .halqTaqsir
+            }
         }
     }
 }

@@ -1,9 +1,20 @@
 import SwiftUI
 
 struct AboutView: View {
+    var embedsNavigation: Bool = true
+
     var body: some View {
-        NavigationStack {
-            ScrollView {
+        if embedsNavigation {
+            NavigationStack {
+                content
+            }
+        } else {
+            content
+        }
+    }
+
+    private var content: some View {
+        ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     VStack(alignment: .leading, spacing: 10) {
                         Text(AppCopy.appName)
@@ -22,7 +33,7 @@ struct AboutView: View {
                     DisclaimerBanner()
 
                     LabeledSection(title: "What this app is", systemImage: "book") {
-                        Text("A quiet, offline companion for the common stages of Umrah: ihram, tawaf, sa'i, and halq or taqsir. It stores only your checklist ticks on this device.")
+                        Text("A quiet, offline companion. Perform shows one next action at a time for ihram, tawaf, sa'i, and cutting the hair. Your checklist ticks and your place in Perform stay on this device.")
                             .font(.body)
                             .foregroundStyle(Theme.ink)
                     }
@@ -66,7 +77,6 @@ struct AboutView: View {
             .umrahScreenBackground()
             .navigationTitle("About")
             .navigationBarTitleDisplayMode(.inline)
-        }
     }
 
     private static var versionString: String {

@@ -11,15 +11,19 @@
 		61AD23D6BDA258C3A4518EC9 /* UmrahGuideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21D283F3BBC5245BE8A6F3A /* UmrahGuideApp.swift */; };
 		98D61BA1AFB950A39C7BF07C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD569A70D37257BEA985A14C /* ContentView.swift */; };
 		4B42C166467956D690F6F592 /* RitualStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E039AB0133B057EDA86FF939 /* RitualStep.swift */; };
+		E78A552DE2B65D95B1111CEB /* PerformStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8573FA1B85DB52EF8455D16F /* PerformStep.swift */; };
 		AA019F2F34835C69A2950581 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C54AC15B20358F98615D5DA /* ChecklistItem.swift */; };
 		65F5BA02601355019F044F00 /* Dua.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D52E51C0125473B1597C2F /* Dua.swift */; };
 		715A02BD7B555BA7A280734E /* RitualCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7D12865F85301BDD82983 /* RitualCatalog.swift */; };
+		CE486847D9F05402AD224116 /* PerformCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6F52F9F35C544C9C70CFDE /* PerformCatalog.swift */; };
 		EAC466757CFD5A7DB19F1043 /* ChecklistCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */; };
 		FFDC28B645B55E93A8A90DFF /* DuaCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554049EFFB7F50E7816A63E1 /* DuaCatalog.swift */; };
 		AF835CF0B2E05A5AA7B1FBBE /* ChecklistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C4538E204502982375D05 /* ChecklistStore.swift */; };
+		FE0B2C4A339C5A0081088164 /* PerformStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975BCBE5679F541BB343EB49 /* PerformStore.swift */; };
 		DF6D40B96805548294D3BE5D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD82421E615CDDB95BB2A2 /* Theme.swift */; };
 		088029E03115501090E1E382 /* DisclaimerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */; };
 		67FFDEB26F5553D493B41CF0 /* SectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A774545C2C915B499A1646AA /* SectionCard.swift */; };
+		4F4E7589099F58A79999DEAE /* PrayThisNowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FC69C662375AFBA7D48168 /* PrayThisNowCard.swift */; };
 		C039B9CECB815463B812157C /* PerformUmrahView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */; };
 		3DE1063CDDA75B14BF47393A /* RitualStepDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */; };
 		73C067EAA27A568BA4183CB8 /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E09DFB40BE58D494508640 /* ChecklistView.swift */; };
@@ -27,10 +31,14 @@
 		B5D7895D08F35364B712B761 /* DuaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B47363FD9E75998B997620D /* DuaDetailView.swift */; };
 		B7F446ECAD315449BC55FEFE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4777E56B6EDB5F65B5F4B268 /* AboutView.swift */; };
 		F8F1B4C1937050A28AE85BC1 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E40AC497AA5773A768A8E9 /* LegalDocumentView.swift */; };
+		C23FFA7CEE3A51E49EF244A9 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A574EB08EC05556A16AAD99 /* MoreView.swift */; };
 		219DFE9D15E25289A0A95C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2DA46FDAEF524FAD204061 /* Assets.xcassets */; };
 		3F70238F402B5AFB978EBE06 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 01558DE754AE5E19815C9DC1 /* PrivacyInfo.xcprivacy */; };
 		3A9154F960F352F3B53DEED7 /* ChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC2F2DC6E456DFB136E460 /* ChecklistStoreTests.swift */; };
 		A09B9F7991E05F22B92E61F6 /* RitualCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA1269AA1A15E08B18AF113 /* RitualCatalogTests.swift */; };
+		AD2FD693C8FC52DE9991E54F /* PerformCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8390227E5F4519D8E539C70 /* PerformCatalogTests.swift */; };
+		8631FB92C7925C54884BA0AB /* PerformStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07AFA0F3D2589FA60D18C7 /* PerformStoreTests.swift */; };
+		F1E55C8F885A5F50A1A75E36 /* DuaCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C16C7D5D9F590EA5D38FBF /* DuaCatalogTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,15 +56,19 @@
 		F21D283F3BBC5245BE8A6F3A /* UmrahGuideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmrahGuideApp.swift; sourceTree = "<group>"; };
 		CD569A70D37257BEA985A14C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E039AB0133B057EDA86FF939 /* RitualStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualStep.swift; sourceTree = "<group>"; };
+		8573FA1B85DB52EF8455D16F /* PerformStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformStep.swift; sourceTree = "<group>"; };
 		6C54AC15B20358F98615D5DA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		B7D52E51C0125473B1597C2F /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
 		D4C7D12865F85301BDD82983 /* RitualCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualCatalog.swift; sourceTree = "<group>"; };
+		1A6F52F9F35C544C9C70CFDE /* PerformCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformCatalog.swift; sourceTree = "<group>"; };
 		94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistCatalog.swift; sourceTree = "<group>"; };
 		554049EFFB7F50E7816A63E1 /* DuaCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaCatalog.swift; sourceTree = "<group>"; };
 		7D4C4538E204502982375D05 /* ChecklistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistStore.swift; sourceTree = "<group>"; };
+		975BCBE5679F541BB343EB49 /* PerformStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformStore.swift; sourceTree = "<group>"; };
 		43DD82421E615CDDB95BB2A2 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerBanner.swift; sourceTree = "<group>"; };
 		A774545C2C915B499A1646AA /* SectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCard.swift; sourceTree = "<group>"; };
+		F6FC69C662375AFBA7D48168 /* PrayThisNowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayThisNowCard.swift; sourceTree = "<group>"; };
 		6C9DCCF2B2DA52E7A8417059 /* PerformUmrahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformUmrahView.swift; sourceTree = "<group>"; };
 		049CAA885D94504D92A1AB14 /* RitualStepDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualStepDetailView.swift; sourceTree = "<group>"; };
 		A3E09DFB40BE58D494508640 /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
@@ -64,10 +76,14 @@
 		7B47363FD9E75998B997620D /* DuaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaDetailView.swift; sourceTree = "<group>"; };
 		4777E56B6EDB5F65B5F4B268 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		60E40AC497AA5773A768A8E9 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
+		9A574EB08EC05556A16AAD99 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		8E2DA46FDAEF524FAD204061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01558DE754AE5E19815C9DC1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		62AC2F2DC6E456DFB136E460 /* ChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistStoreTests.swift; sourceTree = "<group>"; };
 		3DA1269AA1A15E08B18AF113 /* RitualCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RitualCatalogTests.swift; sourceTree = "<group>"; };
+		B8390227E5F4519D8E539C70 /* PerformCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformCatalogTests.swift; sourceTree = "<group>"; };
+		1F07AFA0F3D2589FA60D18C7 /* PerformStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformStoreTests.swift; sourceTree = "<group>"; };
+		02C16C7D5D9F590EA5D38FBF /* DuaCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaCatalogTests.swift; sourceTree = "<group>"; };
 		A2A6107E7D93508180B3D31E /* UmrahGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UmrahGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E345E8AA81D65813896DE0C5 /* UmrahGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmrahGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +129,9 @@
 			children = (
 				62AC2F2DC6E456DFB136E460 /* ChecklistStoreTests.swift */,
 				3DA1269AA1A15E08B18AF113 /* RitualCatalogTests.swift */,
+				B8390227E5F4519D8E539C70 /* PerformCatalogTests.swift */,
+				1F07AFA0F3D2589FA60D18C7 /* PerformStoreTests.swift */,
+				02C16C7D5D9F590EA5D38FBF /* DuaCatalogTests.swift */,
 			);
 			path = UmrahGuideTests;
 			sourceTree = "<group>";
@@ -132,6 +151,7 @@
 			children = (
 				94CF186567E3549EBABF9661 /* ChecklistCatalog.swift */,
 				554049EFFB7F50E7816A63E1 /* DuaCatalog.swift */,
+				1A6F52F9F35C544C9C70CFDE /* PerformCatalog.swift */,
 				D4C7D12865F85301BDD82983 /* RitualCatalog.swift */,
 			);
 			path = Data;
@@ -142,6 +162,7 @@
 			children = (
 				6C54AC15B20358F98615D5DA /* ChecklistItem.swift */,
 				B7D52E51C0125473B1597C2F /* Dua.swift */,
+				8573FA1B85DB52EF8455D16F /* PerformStep.swift */,
 				E039AB0133B057EDA86FF939 /* RitualStep.swift */,
 			);
 			path = Models;
@@ -151,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4C4538E204502982375D05 /* ChecklistStore.swift */,
+				975BCBE5679F541BB343EB49 /* PerformStore.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -193,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1D75A6FF425E4187D08E22 /* DisclaimerBanner.swift */,
+				F6FC69C662375AFBA7D48168 /* PrayThisNowCard.swift */,
 				A774545C2C915B499A1646AA /* SectionCard.swift */,
 			);
 			path = Components;
@@ -205,6 +228,14 @@
 				36DBF0DD158F528EB3F92840 /* DuasView.swift */,
 			);
 			path = Duas;
+			sourceTree = "<group>";
+		};
+		93B7E5CEBF9353E681D9383E /* More */ = {
+			isa = PBXGroup;
+			children = (
+				9A574EB08EC05556A16AAD99 /* MoreView.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		C32859B0956D515EABCCE6FB /* PerformUmrah */ = {
@@ -223,6 +254,7 @@
 				DA873273727B5C198B15110B /* Checklist */,
 				847765916FBD50ADBAF08104 /* Components */,
 				429040679F695EE385ABDCE4 /* Duas */,
+				93B7E5CEBF9353E681D9383E /* More */,
 				C32859B0956D515EABCCE6FB /* PerformUmrah */,
 			);
 			path = Views;
@@ -338,15 +370,19 @@
 				61AD23D6BDA258C3A4518EC9 /* UmrahGuideApp.swift in Sources */,
 				98D61BA1AFB950A39C7BF07C /* ContentView.swift in Sources */,
 				4B42C166467956D690F6F592 /* RitualStep.swift in Sources */,
+				E78A552DE2B65D95B1111CEB /* PerformStep.swift in Sources */,
 				AA019F2F34835C69A2950581 /* ChecklistItem.swift in Sources */,
 				65F5BA02601355019F044F00 /* Dua.swift in Sources */,
 				715A02BD7B555BA7A280734E /* RitualCatalog.swift in Sources */,
+				CE486847D9F05402AD224116 /* PerformCatalog.swift in Sources */,
 				EAC466757CFD5A7DB19F1043 /* ChecklistCatalog.swift in Sources */,
 				FFDC28B645B55E93A8A90DFF /* DuaCatalog.swift in Sources */,
 				AF835CF0B2E05A5AA7B1FBBE /* ChecklistStore.swift in Sources */,
+				FE0B2C4A339C5A0081088164 /* PerformStore.swift in Sources */,
 				DF6D40B96805548294D3BE5D /* Theme.swift in Sources */,
 				088029E03115501090E1E382 /* DisclaimerBanner.swift in Sources */,
 				67FFDEB26F5553D493B41CF0 /* SectionCard.swift in Sources */,
+				4F4E7589099F58A79999DEAE /* PrayThisNowCard.swift in Sources */,
 				C039B9CECB815463B812157C /* PerformUmrahView.swift in Sources */,
 				3DE1063CDDA75B14BF47393A /* RitualStepDetailView.swift in Sources */,
 				73C067EAA27A568BA4183CB8 /* ChecklistView.swift in Sources */,
@@ -354,6 +390,7 @@
 				B5D7895D08F35364B712B761 /* DuaDetailView.swift in Sources */,
 				B7F446ECAD315449BC55FEFE /* AboutView.swift in Sources */,
 				F8F1B4C1937050A28AE85BC1 /* LegalDocumentView.swift in Sources */,
+				C23FFA7CEE3A51E49EF244A9 /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +400,9 @@
 			files = (
 				3A9154F960F352F3B53DEED7 /* ChecklistStoreTests.swift in Sources */,
 				A09B9F7991E05F22B92E61F6 /* RitualCatalogTests.swift in Sources */,
+				AD2FD693C8FC52DE9991E54F /* PerformCatalogTests.swift in Sources */,
+				8631FB92C7925C54884BA0AB /* PerformStoreTests.swift in Sources */,
+				F1E55C8F885A5F50A1A75E36 /* DuaCatalogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Umrah Guide";
@@ -532,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Umrah Guide";
@@ -562,7 +602,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
 				MARKETING_VERSION = "1.0";
@@ -581,7 +621,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = "17.0";
 				MARKETING_VERSION = "1.0";

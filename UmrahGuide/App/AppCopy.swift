@@ -16,8 +16,8 @@ enum AppCopy {
 
     static let noDataCollection = """
     Umrah Guide does not collect personal data. There is no account, no \
-    analytics, no advertising, and no network use. Your checklist stays \
-    on this device.
+    analytics, no advertising, and no network use. Your checklist and \
+    your place in Perform stay on this device.
     """
 
     static let githubPagesBase = "https://moilyas999.github.io/umrah-guide"

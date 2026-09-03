@@ -28,7 +28,7 @@ enum LegalCopy {
         "Umrah Guide is published by DeskLink.ai (Mohammed Ilyas). Bundle identifier: \(AppCopy.bundleID).",
         "The app does not collect personal data. There is no account, no sign-in, no analytics, no advertising, no crash reporter, and no third-party SDK.",
         "The app does not use the network. It does not request location. It does not access your contacts, photos, microphone, or camera.",
-        "The only information stored is which checklist rows you have ticked. That list is saved on this device with Apple’s UserDefaults. It is not uploaded, synced, or shared.",
+        "The only information stored is which checklist rows you have ticked, which Perform step you are on, and which steps you marked done. That list is saved on this device with Apple’s UserDefaults. It is not uploaded, synced, or shared.",
         "App Store Privacy Nutrition Label: Data Not Collected.",
         "If this policy ever changes, the copy in the app and the copy at \(AppCopy.githubPagesBase)/privacy.html will be updated together. Today both say the same thing: nothing personal is collected."
     ]
