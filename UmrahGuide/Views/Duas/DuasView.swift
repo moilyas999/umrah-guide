@@ -20,7 +20,7 @@ struct DuasView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     ScreenHeader(
                         title: "Duas",
-                        subtitle: "Short, well-known wording. Use the filter to show Arabic, how to say it, and meaning in any combination."
+                        subtitle: "Tap a title to open that dua. Use the filter to show Arabic, how to say it, and meaning in any combination."
                     )
 
                     DuaDisplayFilterBar()
@@ -28,7 +28,7 @@ struct DuasView: View {
                     DisclaimerBanner(compact: true)
 
                     ForEach(DuaOccasion.allCases) { occasion in
-                        VStack(alignment: .leading, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 10) {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(occasion.title)
                                     .font(.title3.weight(.bold))
@@ -41,10 +41,7 @@ struct DuasView: View {
                             }
 
                             ForEach(DuaCatalog.duas(for: occasion)) { dua in
-                                NavigationLink(value: dua.id) {
-                                    DuaRow(dua: dua)
-                                }
-                                .buttonStyle(.plain)
+                                CollapsibleDuaRow(dua: dua, showsDetailLink: true, style: .card)
                             }
                         }
                         .id(occasion)
@@ -56,11 +53,6 @@ struct DuasView: View {
             .umrahScreenBackground()
             .navigationTitle("Duas")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: String.self) { id in
-                if let dua = DuaCatalog.dua(id: id) {
-                    DuaDetailView(dua: dua)
-                }
-            }
             .onAppear {
                 if let initialOccasion {
                     DispatchQueue.main.async {
@@ -71,17 +63,6 @@ struct DuasView: View {
                 }
             }
         }
-    }
-}
-
-private struct DuaRow: View {
-    let dua: Dua
-
-    var body: some View {
-        DuaTextBlock(dua: dua, compact: true)
-            .umrahCard()
-            .accessibilityHint("Opens the full dua with the source note")
-            .accessibilityAddTraits(.isButton)
     }
 }
 

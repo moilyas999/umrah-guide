@@ -59,7 +59,7 @@ struct PerformStep: Identifiable, Equatable, Hashable {
     let womenNote: String?
     /// One-line caution, not a lecture.
     let caution: String?
-    /// Duas shown when this step (or its stage) is expanded. First is the primary.
+    /// Duas for this step, shown as collapsed rows. First is the primary.
     let relatedDuaIDs: [String]
 
     var primaryDuaID: String? { relatedDuaIDs.first }

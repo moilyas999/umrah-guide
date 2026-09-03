@@ -20,6 +20,7 @@ SWIFT_SOURCES = [
     "UmrahGuide/Models/ChecklistItem.swift",
     "UmrahGuide/Models/Dua.swift",
     "UmrahGuide/Models/DuaDisplayOptions.swift",
+    "UmrahGuide/Models/DuaExpansion.swift",
     "UmrahGuide/Data/RitualCatalog.swift",
     "UmrahGuide/Data/PerformCatalog.swift",
     "UmrahGuide/Data/ChecklistCatalog.swift",
@@ -32,6 +33,7 @@ SWIFT_SOURCES = [
     "UmrahGuide/Views/Components/SectionCard.swift",
     "UmrahGuide/Views/Components/DuaTextBlock.swift",
     "UmrahGuide/Views/Components/DuaDisplayFilterBar.swift",
+    "UmrahGuide/Views/Components/CollapsibleDuaRow.swift",
     "UmrahGuide/Views/Components/PrayThisNowCard.swift",
     "UmrahGuide/Views/PerformUmrah/PerformUmrahView.swift",
     "UmrahGuide/Views/PerformUmrah/RitualStepDetailView.swift",
@@ -57,6 +59,7 @@ TESTS = [
     "UmrahGuideTests/PerformAccordionTests.swift",
     "UmrahGuideTests/DuaCatalogTests.swift",
     "UmrahGuideTests/DuaDisplayStoreTests.swift",
+    "UmrahGuideTests/DuaExpansionTests.swift",
 ]
 
 

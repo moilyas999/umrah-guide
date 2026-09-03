@@ -99,4 +99,20 @@ final class PerformAccordionTests: XCTestCase {
         XCTAssertFalse(ids.contains("talbiyah"))
         XCTAssertFalse(ids.contains("sai.safa.verse"))
     }
+
+    func testStepDuaRowsDefaultCollapsedAndDoNotDumpTheWholeStage() {
+        let tawafStart = PerformCatalog.step(id: "enter-haram")
+        let stepDuas = DuaExpansion.duas(for: tawafStart)
+        XCTAssertEqual(stepDuas.map(\.id), ["haram.enter"])
+
+        let rows = DuaExpansion.presentations(
+            duas: stepDuas,
+            expandedIDs: DuaExpansion.defaultExpandedIDs(for: stepDuas),
+            options: .default
+        )
+        XCTAssertEqual(rows.count, 1)
+        XCTAssertFalse(rows[0].isExpanded)
+        XCTAssertEqual(rows[0].title, "Dua for Entering a mosque")
+        XCTAssertEqual(rows[0].visibleTransliteration, stepDuas[0].transliteration)
+    }
 }

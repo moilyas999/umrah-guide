@@ -38,9 +38,9 @@ Export compliance: the target sets `ITSAppUsesNonExemptEncryption` to `NO`. The 
 
 | Tab | Contents |
 | --- | --- |
-| Perform | Four collapsible stages (ihram, tawaf, sa'i, hair). The current stage is marked Now. Expand a stage for instructions, an in-place checklist, and its duas. One Next button. A filter shows Arabic, how to say it, and meaning in any combination (default: all three; saved on this iPhone). |
+| Perform | Four collapsible stages (ihram, tawaf, sa'i, hair). The current stage is marked Now. Expand a stage for instructions and an in-place checklist. Each step’s duas are collapsed rows — tap a title to open Arabic, how to say it, and meaning. One Next button. A filter shows those three fields in any combination (default: all three; saved on this iPhone). |
 | Pack | Ihram and packing items, stored in on-device `UserDefaults` |
-| More | All duas (by stage, plus general), About, and a reset for your Perform place |
+| More | All duas (by category, each a collapsed row), About, and a reset for your Perform place |
 
 Guidance is high-level Sunni majority practice. It is **not a fatwa**. Users are told to consult a qualified scholar.
 
@@ -53,6 +53,7 @@ The **UmrahGuide** scheme includes **UmrahGuideTests**:
 - Perform catalog is a 16-step linear walk; each step has a short action summary and 1–3 “do now” sentences.
 - Perform place and “I've done this” ticks persist in an isolated `UserDefaults` suite.
 - Accordion model marks the current stage, expands it after a stage change, and lists that stage's duas.
+- Dua bodies start collapsed. Expanding a row reveals Arabic, transliteration, and meaning according to the display filter.
 - Dua display filter (Arabic / transliteration / meaning) defaults to all three and persists in an isolated `UserDefaults` suite.
 - Dua catalog covers ihram, the Sacred Mosque, first sight of the Kaaba, tawaf (including Rabbana atina), Maqam Ibrahim, Zamzam, sa'i, the hair rite, and general duas. Every card has Arabic, Latin transliteration, English meaning, and an honest source note.
 

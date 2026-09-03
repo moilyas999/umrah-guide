@@ -74,12 +74,7 @@ struct RitualStepDetailView: View {
                         .foregroundStyle(Theme.muted)
 
                     ForEach(matches) { dua in
-                        NavigationLink {
-                            DuaDetailView(dua: dua)
-                        } label: {
-                            DuaTextBlock(dua: dua, compact: true)
-                        }
-                        .buttonStyle(.plain)
+                        CollapsibleDuaRow(dua: dua, showsDetailLink: true, style: .inset)
                     }
                 }
             }

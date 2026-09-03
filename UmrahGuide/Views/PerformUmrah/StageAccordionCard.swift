@@ -204,33 +204,17 @@ struct StageAccordionCard: View {
 
     @ViewBuilder
     private func currentDuas(_ step: PerformStep) -> some View {
-        let stepDuas = step.relatedDuaIDs.compactMap(DuaCatalog.dua(id:))
-        let extras = presentation.duas.filter { dua in
-            !step.relatedDuaIDs.contains(dua.id)
-        }
-        let ordered = stepDuas + extras
+        let stepDuas = DuaExpansion.duas(for: step)
 
-        if !ordered.isEmpty {
-            VStack(alignment: .leading, spacing: 14) {
-                Text(ordered.count == 1 ? "Dua" : "Duas for this stage")
+        if !stepDuas.isEmpty {
+            VStack(alignment: .leading, spacing: 10) {
+                Text(stepDuas.count == 1 ? "Dua" : "Duas for this step")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(Theme.muted)
                     .accessibilityAddTraits(.isHeader)
 
-                ForEach(Array(ordered.enumerated()), id: \.element.id) { index, dua in
-                    VStack(alignment: .leading, spacing: 14) {
-                        let highlight = step.relatedDuaIDs.contains(dua.id)
-                        DuaTextBlock(dua: dua, compact: true)
-                            .padding(highlight ? 12 : 0)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(highlight ? Theme.accent.opacity(0.06) : Color.clear)
-                            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-
-                        if index < ordered.count - 1 {
-                            Divider()
-                                .opacity(0.35)
-                        }
-                    }
+                ForEach(stepDuas) { dua in
+                    CollapsibleDuaRow(dua: dua, style: .inset)
                 }
             }
         }
