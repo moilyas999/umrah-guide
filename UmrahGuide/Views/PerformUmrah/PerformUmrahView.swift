@@ -174,7 +174,7 @@ struct PerformUmrahView: View {
         VStack(alignment: .leading, spacing: 12) {
             ForEach(Array(step.doNow.enumerated()), id: \.offset) { _, sentence in
                 Text(sentence)
-                    .font(.title3)
+                    .font(.title2)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -309,7 +309,7 @@ struct PerformUmrahView: View {
         Button {
             showLearnMore = true
         } label: {
-            Text("More detail on \(step.stage.title)")
+            Text("More detail on this stage")
                 .font(.body.weight(.semibold))
                 .foregroundStyle(Theme.muted)
                 .frame(minHeight: 44)
