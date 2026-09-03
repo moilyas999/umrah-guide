@@ -5,22 +5,17 @@ struct ContentView: View {
         TabView {
             PerformUmrahView()
                 .tabItem {
-                    Label("Perform Umrah", systemImage: "figure.walk")
+                    Label("Perform", systemImage: "figure.walk")
                 }
 
             ChecklistView()
                 .tabItem {
-                    Label("Checklist", systemImage: "checklist")
+                    Label("Pack", systemImage: "checklist")
                 }
 
-            DuasView()
+            MoreView()
                 .tabItem {
-                    Label("Duas", systemImage: "text.book.closed")
-                }
-
-            AboutView()
-                .tabItem {
-                    Label("About", systemImage: "info.circle")
+                    Label("More", systemImage: "ellipsis.circle")
                 }
         }
     }
@@ -29,4 +24,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(ChecklistStore(defaults: UserDefaults(suiteName: "preview.checklist") ?? .standard))
+        .environmentObject(PerformStore(defaults: UserDefaults(suiteName: "preview.perform") ?? .standard))
 }

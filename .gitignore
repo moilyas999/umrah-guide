@@ -24,3 +24,7 @@ Package.resolved
 *.swp
 *~
 .idea/
+
+# Scripts
+scripts/__pycache__/
+__pycache__/

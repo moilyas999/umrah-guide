@@ -1,23 +1,42 @@
 import SwiftUI
 
 struct DuasView: View {
+    var initialOccasion: DuaOccasion?
+    var embedsNavigation: Bool = true
+
     var body: some View {
-        NavigationStack {
+        if embedsNavigation {
+            NavigationStack {
+                list
+            }
+        } else {
+            list
+        }
+    }
+
+    private var list: some View {
+        ScrollViewReader { proxy in
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 24) {
                     ScreenHeader(
                         title: "Duas",
-                        subtitle: "Well-known wording for Ihram, Tawaf, and Sa'i. Source notes stay honest: no invented hadith numbers."
+                        subtitle: "Short, well-known wording. Arabic and English meaning on every card. Nothing here is required on every lap or every leg."
                     )
 
                     DisclaimerBanner(compact: true)
 
                     ForEach(DuaOccasion.allCases) { occasion in
                         VStack(alignment: .leading, spacing: 12) {
-                            Text(occasion.title)
-                                .font(.title3.weight(.semibold))
-                                .foregroundStyle(Theme.accent)
-                                .accessibilityAddTraits(.isHeader)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(occasion.title)
+                                    .font(.title2.weight(.bold))
+                                    .foregroundStyle(Theme.accent)
+                                    .accessibilityAddTraits(.isHeader)
+                                Text(occasion.meaning)
+                                    .font(.body)
+                                    .foregroundStyle(Theme.muted)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
 
                             ForEach(DuaCatalog.duas(for: occasion)) { dua in
                                 NavigationLink(value: dua.id) {
@@ -26,6 +45,7 @@ struct DuasView: View {
                                 .buttonStyle(.plain)
                             }
                         }
+                        .id(occasion)
                     }
                 }
                 .padding(.horizontal, 20)
@@ -35,8 +55,17 @@ struct DuasView: View {
             .navigationTitle("Duas")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: String.self) { id in
-                if let dua = DuaCatalog.duas.first(where: { $0.id == id }) {
+                if let dua = DuaCatalog.dua(id: id) {
                     DuaDetailView(dua: dua)
+                }
+            }
+            .onAppear {
+                if let initialOccasion {
+                    DispatchQueue.main.async {
+                        withAnimation {
+                            proxy.scrollTo(initialOccasion, anchor: .top)
+                        }
+                    }
                 }
             }
         }
@@ -47,26 +76,28 @@ private struct DuaRow: View {
     let dua: Dua
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(dua.title)
-                .font(.headline)
+                .font(.title3.weight(.semibold))
                 .foregroundStyle(Theme.ink)
+
             Text(dua.arabic)
-                .font(.title3)
+                .font(.title2.weight(.medium))
                 .foregroundStyle(Theme.ink)
                 .multilineTextAlignment(.trailing)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .environment(\.layoutDirection, .rightToLeft)
-            Text(dua.transliteration)
-                .font(.subheadline)
-                .italic()
-                .foregroundStyle(Theme.muted)
+                .minimumScaleFactor(0.7)
+
+            Text(dua.meaning)
+                .font(.title3)
+                .foregroundStyle(Theme.ink)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .umrahCard()
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(dua.title). \(dua.transliteration). \(dua.meaning)")
-        .accessibilityHint("Opens the full dua with the source note")
+        .accessibilityLabel("\(dua.title). \(dua.meaning)")
+        .accessibilityHint("Opens the full dua with pronunciation and the source note")
         .accessibilityAddTraits(.isButton)
     }
 }

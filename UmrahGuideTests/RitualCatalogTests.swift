@@ -31,7 +31,11 @@ final class RitualCatalogTests: XCTestCase {
         XCTAssertTrue(hair.womenNotes.localizedCaseInsensitiveContains("not shaving") || hair.womenNotes.localizedCaseInsensitiveContains("do not shave"))
     }
 
-    func testDuasCoverIhramTawafAndSai() {
+    func testBundleIdentifierIsUnchanged() {
+        XCTAssertEqual(AppCopy.bundleID, "ai.desklink.umrahguide")
+    }
+
+    func testDuasCoverEveryOccasion() {
         let occasions = Set(DuaCatalog.duas.map(\.occasion))
         XCTAssertEqual(occasions, Set(DuaOccasion.allCases))
         XCTAssertFalse(DuaCatalog.duas.contains(where: { $0.arabic.isEmpty || $0.sourceNote.isEmpty }))

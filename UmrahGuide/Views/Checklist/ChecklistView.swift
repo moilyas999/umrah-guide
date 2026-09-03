@@ -13,8 +13,8 @@ struct ChecklistView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     ScreenHeader(
-                        title: "Checklist",
-                        subtitle: "Ihram and packing reminders. Ticks stay on this iPhone only."
+                        title: "Pack",
+                        subtitle: "Ihram and packing reminders. Open this from Perform without losing your place. Ticks stay on this iPhone only."
                     )
 
                     progressCard
@@ -27,7 +27,7 @@ struct ChecklistView: View {
                 .padding(.vertical, 16)
             }
             .umrahScreenBackground()
-            .navigationTitle("Checklist")
+            .navigationTitle("Pack")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

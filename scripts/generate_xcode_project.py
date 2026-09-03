@@ -15,15 +15,19 @@ SWIFT_SOURCES = [
     "UmrahGuide/App/UmrahGuideApp.swift",
     "UmrahGuide/App/ContentView.swift",
     "UmrahGuide/Models/RitualStep.swift",
+    "UmrahGuide/Models/PerformStep.swift",
     "UmrahGuide/Models/ChecklistItem.swift",
     "UmrahGuide/Models/Dua.swift",
     "UmrahGuide/Data/RitualCatalog.swift",
+    "UmrahGuide/Data/PerformCatalog.swift",
     "UmrahGuide/Data/ChecklistCatalog.swift",
     "UmrahGuide/Data/DuaCatalog.swift",
     "UmrahGuide/Persistence/ChecklistStore.swift",
+    "UmrahGuide/Persistence/PerformStore.swift",
     "UmrahGuide/Theme/Theme.swift",
     "UmrahGuide/Views/Components/DisclaimerBanner.swift",
     "UmrahGuide/Views/Components/SectionCard.swift",
+    "UmrahGuide/Views/Components/PrayThisNowCard.swift",
     "UmrahGuide/Views/PerformUmrah/PerformUmrahView.swift",
     "UmrahGuide/Views/PerformUmrah/RitualStepDetailView.swift",
     "UmrahGuide/Views/Checklist/ChecklistView.swift",
@@ -31,6 +35,7 @@ SWIFT_SOURCES = [
     "UmrahGuide/Views/Duas/DuaDetailView.swift",
     "UmrahGuide/Views/About/AboutView.swift",
     "UmrahGuide/Views/About/LegalDocumentView.swift",
+    "UmrahGuide/Views/More/MoreView.swift",
 ]
 
 RESOURCES = [
@@ -41,6 +46,9 @@ RESOURCES = [
 TESTS = [
     "UmrahGuideTests/ChecklistStoreTests.swift",
     "UmrahGuideTests/RitualCatalogTests.swift",
+    "UmrahGuideTests/PerformCatalogTests.swift",
+    "UmrahGuideTests/PerformStoreTests.swift",
+    "UmrahGuideTests/DuaCatalogTests.swift",
 ]
 
 
@@ -170,7 +178,7 @@ APP_KEYS = {
     "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
     "ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME": "AccentColor",
     "CODE_SIGN_STYLE": "Automatic",
-    "CURRENT_PROJECT_VERSION": "1",
+    "CURRENT_PROJECT_VERSION": "3",
     "ENABLE_PREVIEWS": "YES",
     "GENERATE_INFOPLIST_FILE": "YES",
     "INFOPLIST_KEY_CFBundleDisplayName": "Umrah Guide",
@@ -197,7 +205,7 @@ APP_KEYS = {
 TEST_KEYS = {
     "BUNDLE_LOADER": '"$(TEST_HOST)"',
     "CODE_SIGN_STYLE": "Automatic",
-    "CURRENT_PROJECT_VERSION": "1",
+    "CURRENT_PROJECT_VERSION": "3",
     "GENERATE_INFOPLIST_FILE": "YES",
     "IPHONEOS_DEPLOYMENT_TARGET": "17.0",
     "MARKETING_VERSION": "1.0",
