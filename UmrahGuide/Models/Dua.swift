@@ -9,7 +9,7 @@ enum DuaOccasion: String, CaseIterable, Identifiable {
     case zamzam
     case sai
     case halqTaqsir
-    case general
+    case personal
 
     var id: String { rawValue }
 
@@ -23,7 +23,7 @@ enum DuaOccasion: String, CaseIterable, Identifiable {
         case .zamzam: return "Zamzam"
         case .sai: return "Sa'i"
         case .halqTaqsir: return "Halq / Taqsir"
-        case .general: return "General"
+        case .personal: return "Personal / Everyday"
         }
     }
 
@@ -37,10 +37,11 @@ enum DuaOccasion: String, CaseIterable, Identifiable {
         case .zamzam: return "The well in the Sacred Mosque. Drink and ask Allah for what you need."
         case .sai: return "Sa'i is walking between the hills Safa and Marwah seven times."
         case .halqTaqsir: return "Halq is shaving. Taqsir is shortening the hair."
-        case .general: return "Short words you can use at any moment."
+        case .personal: return "Everyday needs — provision, forgiveness, protection, family, health, and more. Say them any time."
         }
     }
 
+    /// Umrah rite groups only. Personal / Everyday duas stay in the Duas tab unless a step names them.
     var performStage: PerformStage? {
         switch self {
         case .ihram:
@@ -51,10 +52,12 @@ enum DuaOccasion: String, CaseIterable, Identifiable {
             return .sai
         case .halqTaqsir:
             return .halqTaqsir
-        case .general:
+        case .personal:
             return nil
         }
     }
+
+    var isPersonalEveryday: Bool { self == .personal }
 }
 
 enum DuaSourceKind: String, Equatable {
