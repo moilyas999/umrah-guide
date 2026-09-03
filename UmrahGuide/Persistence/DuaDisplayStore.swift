@@ -25,7 +25,9 @@ final class DuaDisplayStore: ObservableObject {
     }
 
     func set(_ field: DuaDisplayField, isOn: Bool) {
-        options.set(field, isOn: isOn)
+        var next = options
+        next.set(field, isOn: isOn)
+        options = next
         persist()
     }
 
