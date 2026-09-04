@@ -7,56 +7,46 @@ struct MoreView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    ScreenHeader(
-                        title: "More",
-                        subtitle: "Duas, about this app, and your saved place. Nothing leaves this iPhone."
-                    )
-
-                    NavigationLink {
-                        DuasView(embedsNavigation: false)
-                    } label: {
-                        MoreRow(
-                            title: "All duas",
-                            subtitle: "Browse by rite or Personal / Everyday. Tap a title to open Arabic, how to say it, and meaning.",
-                            systemImage: "text.book.closed"
-                        )
-                    }
-                    .buttonStyle(.plain)
+                VStack(alignment: .leading, spacing: 16) {
+                    ScreenLead(subtitle: "About this app and your saved place. Nothing leaves this iPhone.")
 
                     NavigationLink {
                         AboutView(embedsNavigation: false)
                     } label: {
                         MoreRow(
-                            title: "About and privacy",
+                            title: MoreItem.about.title,
                             subtitle: "Educational guide. No account, no ads, no tracking.",
                             systemImage: "info.circle"
                         )
                     }
                     .buttonStyle(.plain)
 
-                    LabeledSection(title: "Your place", systemImage: "figure.walk") {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("Perform is on step \(performStore.stepIndex + 1) of \(PerformCatalog.steps.count): \(performStore.currentStep.title).")
-                                .font(.title3)
-                                .foregroundStyle(Theme.ink)
-                                .fixedSize(horizontal: false, vertical: true)
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Your place")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.ink)
+                            .accessibilityAddTraits(.isHeader)
 
-                            Button("Start Perform from the beginning") {
-                                confirmRestart = true
-                            }
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(Theme.danger)
-                            .frame(minHeight: 44)
+                        Text("Perform is on step \(performStore.stepIndex + 1) of \(PerformCatalog.steps.count): \(performStore.currentStep.title).")
+                            .font(.body)
+                            .foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                        Button(MoreItem.restartPerform.title) {
+                            confirmRestart = true
                         }
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(Theme.danger)
+                        .frame(minHeight: 44)
                     }
+                    .umrahCard()
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
+                .padding(.horizontal, Theme.horizontalPadding)
+                .padding(.vertical, 12)
             }
             .umrahScreenBackground()
             .navigationTitle("More")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .alert("Start Perform from the beginning?", isPresented: $confirmRestart) {
                 Button("Start over", role: .destructive) {
                     performStore.reset()
@@ -75,19 +65,19 @@ private struct MoreRow: View {
     let systemImage: String
 
     var body: some View {
-        HStack(alignment: .center, spacing: 14) {
+        HStack(alignment: .center, spacing: 12) {
             Image(systemName: systemImage)
-                .font(.title2)
+                .font(.title3)
                 .foregroundStyle(Theme.accent)
-                .frame(width: 36)
+                .frame(width: 28)
                 .accessibilityHidden(true)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(title)
-                    .font(.title3.weight(.semibold))
+                    .font(.body.weight(.semibold))
                     .foregroundStyle(Theme.ink)
                 Text(subtitle)
-                    .font(.body)
+                    .font(.subheadline)
                     .foregroundStyle(Theme.muted)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -95,7 +85,7 @@ private struct MoreRow: View {
             Spacer(minLength: 8)
 
             Image(systemName: "chevron.forward")
-                .font(.body.weight(.semibold))
+                .font(.footnote.weight(.semibold))
                 .foregroundStyle(Theme.muted)
                 .accessibilityHidden(true)
         }

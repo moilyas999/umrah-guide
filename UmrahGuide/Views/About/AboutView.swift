@@ -15,73 +15,73 @@ struct AboutView: View {
 
     private var content: some View {
         ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(AppCopy.appName)
-                            .font(.largeTitle.weight(.semibold))
-                            .foregroundStyle(Theme.ink)
-                            .accessibilityAddTraits(.isHeader)
-                        Text("Version \(Self.versionString)")
-                            .font(.subheadline)
-                            .foregroundStyle(Theme.muted)
-                        Text("An independent educational app from \(AppCopy.publisher), created by \(AppCopy.author).")
-                            .font(.body)
-                            .foregroundStyle(Theme.ink)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-
-                    DisclaimerBanner()
-
-                    LabeledSection(title: "What this app is", systemImage: "book") {
-                        Text("A quiet, offline companion. Perform lists ihram, tawaf, sa'i, and cutting the hair as collapsible stages. You choose whether each dua shows Arabic, how to say it, and the English meaning. Your checklist ticks, your place, and that display choice stay on this device.")
-                            .font(.body)
-                            .foregroundStyle(Theme.ink)
-                    }
-
-                    LabeledSection(title: "What this app is not", systemImage: "slash.circle") {
-                        Text("It is not a fatwa service, not a live scholar, and not a substitute for the people of knowledge you already trust. Details differ across Sunni schools.")
-                            .font(.body)
-                            .foregroundStyle(Theme.ink)
-                    }
-
-                    LabeledSection(title: "Privacy", systemImage: "lock.shield") {
-                        Text(AppCopy.noDataCollection)
-                            .font(.body)
-                            .foregroundStyle(Theme.ink)
-                    }
-
-                    VStack(spacing: 10) {
-                        NavigationLink {
-                            LegalDocumentView(document: .privacy)
-                        } label: {
-                            AboutLinkRow(title: "Privacy policy", systemImage: "doc.text")
-                        }
-                        .buttonStyle(.plain)
-
-                        NavigationLink {
-                            LegalDocumentView(document: .support)
-                        } label: {
-                            AboutLinkRow(title: "Support", systemImage: "questionmark.circle")
-                        }
-                        .buttonStyle(.plain)
-                    }
-
-                    Text("The same documents are published for App Store review as GitHub Pages at \(AppCopy.githubPagesBase)/ when Pages is enabled on the public repository. The app itself never opens the network.")
-                        .font(.footnote)
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(AppCopy.appName)
+                        .font(.title2.weight(.semibold))
+                        .foregroundStyle(Theme.ink)
+                        .accessibilityAddTraits(.isHeader)
+                    Text("Version \(Self.versionString)")
+                        .font(.subheadline)
                         .foregroundStyle(Theme.muted)
+                    Text("An independent educational app from \(AppCopy.publisher), created by \(AppCopy.author).")
+                        .font(.body)
+                        .foregroundStyle(Theme.ink)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 16)
+
+                DisclaimerBanner()
+
+                LabeledSection(title: "What this app is") {
+                    Text("An offline companion. Perform walks ihram, tawaf, sa'i, and cutting the hair. Duas are their own tab — rite groups plus Personal / Everyday. Choose Arabic, how to say it, and meaning. Your ticks and place stay on this device.")
+                        .font(.body)
+                        .foregroundStyle(Theme.ink)
+                }
+
+                LabeledSection(title: "What this app is not") {
+                    Text("It is not a fatwa service, not a live scholar, and not a substitute for the people of knowledge you already trust. Details differ across Sunni schools.")
+                        .font(.body)
+                        .foregroundStyle(Theme.ink)
+                }
+
+                LabeledSection(title: "Privacy") {
+                    Text(AppCopy.noDataCollection)
+                        .font(.body)
+                        .foregroundStyle(Theme.ink)
+                }
+
+                VStack(spacing: 8) {
+                    NavigationLink {
+                        LegalDocumentView(document: .privacy)
+                    } label: {
+                        AboutLinkRow(title: "Privacy policy", systemImage: "doc.text")
+                    }
+                    .buttonStyle(.plain)
+
+                    NavigationLink {
+                        LegalDocumentView(document: .support)
+                    } label: {
+                        AboutLinkRow(title: "Support", systemImage: "questionmark.circle")
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                Text("The same documents are published for App Store review as GitHub Pages at \(AppCopy.githubPagesBase)/ when Pages is enabled on the public repository. The app itself never opens the network.")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .umrahScreenBackground()
-            .navigationTitle("About")
-            .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal, Theme.horizontalPadding)
+            .padding(.vertical, 12)
+        }
+        .umrahScreenBackground()
+        .navigationTitle("About")
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private static var versionString: String {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
-        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? AppVersion.marketing
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? AppVersion.build
         return "\(version) (\(build))"
     }
 }
@@ -97,6 +97,7 @@ private struct AboutLinkRow: View {
                 .foregroundStyle(Theme.ink)
             Spacer()
             Image(systemName: "chevron.forward")
+                .font(.footnote.weight(.semibold))
                 .foregroundStyle(Theme.muted)
                 .accessibilityHidden(true)
         }

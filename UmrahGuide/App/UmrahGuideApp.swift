@@ -13,6 +13,7 @@ struct UmrahGuideApp: App {
                 .environmentObject(performStore)
                 .environmentObject(duaDisplayStore)
                 .tint(Theme.accent)
+                .preferredColorScheme(AppearancePolicy.preferredColorScheme)
         }
     }
 }

@@ -28,7 +28,7 @@ struct CollapsibleDuaRow: View {
             if isExpanded {
                 expandedContent(presentation)
                     .padding(.horizontal, 14)
-                    .padding(.bottom, 14)
+                    .padding(.bottom, 12)
                     .padding(.top, 2)
                     .transition(.opacity.combined(with: .move(edge: .top)))
             }
@@ -37,7 +37,7 @@ struct CollapsibleDuaRow: View {
         .clipShape(RoundedRectangle(cornerRadius: rowRadius, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: rowRadius, style: .continuous)
-                .stroke(Theme.ink.opacity(style == .card ? 0.06 : 0.08), lineWidth: 1)
+                .stroke(Theme.hairline, lineWidth: 1)
         )
         .onAppear {
             if startsExpanded {
@@ -48,11 +48,11 @@ struct CollapsibleDuaRow: View {
     }
 
     private var rowBackground: Color {
-        style == .card ? Theme.card : Theme.accent.opacity(0.06)
+        style == .card ? Theme.card : Theme.page
     }
 
     private var rowRadius: CGFloat {
-        style == .card ? Theme.cardRadius : 14
+        style == .card ? Theme.cardRadius : 10
     }
 
     private func header(_ presentation: CollapsibleDuaPresentation?) -> some View {
@@ -62,7 +62,7 @@ struct CollapsibleDuaRow: View {
             }
         } label: {
             HStack(alignment: .center, spacing: 12) {
-                VStack(alignment: .leading, spacing: 3) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text(presentation?.title ?? DuaExpansion.collapsedTitle(for: dua))
                         .font(.body.weight(.semibold))
                         .foregroundStyle(Theme.ink)
@@ -75,7 +75,7 @@ struct CollapsibleDuaRow: View {
                 }
                 Spacer(minLength: 8)
                 Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                    .font(.subheadline.weight(.semibold))
+                    .font(.footnote.weight(.semibold))
                     .foregroundStyle(Theme.muted)
                     .accessibilityHidden(true)
             }
@@ -92,7 +92,7 @@ struct CollapsibleDuaRow: View {
 
     @ViewBuilder
     private func expandedContent(_ presentation: CollapsibleDuaPresentation?) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 10) {
             if let presentation, presentation.isExpanded {
                 if presentation.showsAnyBodyText {
                     DuaTextBlock(dua: dua, showsTitle: false, compact: true)
@@ -108,7 +108,7 @@ struct CollapsibleDuaRow: View {
                 NavigationLink {
                     DuaDetailView(dua: dua)
                 } label: {
-                    Text("When to say it and source")
+                    Text("When and source")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Theme.accent)
                         .frame(minHeight: 44, alignment: .leading)
@@ -121,7 +121,7 @@ struct CollapsibleDuaRow: View {
 
 #Preview {
     ScrollView {
-        VStack(spacing: 12) {
+        VStack(spacing: 10) {
             CollapsibleDuaRow(dua: DuaCatalog.duas[0])
             CollapsibleDuaRow(dua: DuaCatalog.duas[1], style: .inset)
         }

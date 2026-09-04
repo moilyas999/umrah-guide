@@ -3,21 +3,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            PerformUmrahView()
-                .tabItem {
-                    Label("Perform", systemImage: "figure.walk")
-                }
-
-            ChecklistView()
-                .tabItem {
-                    Label("Pack", systemImage: "checklist")
-                }
-
-            MoreView()
-                .tabItem {
-                    Label("More", systemImage: "ellipsis.circle")
-                }
+            ForEach(AppTab.primary) { tab in
+                tab.rootView
+                    .tabItem {
+                        Label(tab.title, systemImage: tab.systemImage)
+                    }
+            }
         }
+        .preferredColorScheme(AppearancePolicy.preferredColorScheme)
     }
 }
 

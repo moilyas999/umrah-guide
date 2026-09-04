@@ -9,17 +9,17 @@ struct DuaTextBlock: View {
     @EnvironmentObject private var display: DuaDisplayStore
 
     var body: some View {
-        VStack(alignment: .leading, spacing: compact ? 10 : 14) {
+        VStack(alignment: .leading, spacing: compact ? 10 : 12) {
             if showsTitle {
                 Text(dua.title)
-                    .font(compact ? .subheadline.weight(.semibold) : .headline)
+                    .font(.headline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
             }
 
             if display.options.showsArabic {
                 Text(dua.arabic)
-                    .font(compact ? .title3.weight(.medium) : .title2.weight(.medium))
+                    .font(compact ? .title3 : .title2)
                     .foregroundStyle(Theme.ink)
                     .multilineTextAlignment(.trailing)
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -30,7 +30,7 @@ struct DuaTextBlock: View {
             }
 
             if display.options.showsTransliteration {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text("How to say it")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(Theme.muted)
@@ -47,13 +47,13 @@ struct DuaTextBlock: View {
             }
 
             if display.options.showsMeaning {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text("Meaning")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(Theme.muted)
                         .accessibilityHidden(true)
                     Text(dua.meaning)
-                        .font(compact ? .body : .title3)
+                        .font(.body)
                         .foregroundStyle(Theme.ink)
                         .fixedSize(horizontal: false, vertical: true)
                 }

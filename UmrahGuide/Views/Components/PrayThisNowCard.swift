@@ -6,21 +6,13 @@ struct PrayThisNowCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Pray this now")
-                .font(.caption.weight(.bold))
-                .foregroundStyle(Theme.page)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(Theme.accent)
-                .clipShape(Capsule())
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(Theme.accent)
                 .accessibilityAddTraits(.isHeader)
 
             DuaTextBlock(dua: dua)
         }
         .umrahCard()
-        .overlay(
-            RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous)
-                .stroke(Theme.accent.opacity(0.28), lineWidth: 1.5)
-        )
     }
 }
 

@@ -5,34 +5,30 @@ struct RitualStepDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Step \(step.order) of \(RitualCatalog.steps.count)")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(Theme.accent)
-                    Text(step.title)
-                        .font(.largeTitle.weight(.semibold))
-                        .foregroundStyle(Theme.ink)
-                        .accessibilityAddTraits(.isHeader)
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Stage \(step.order) of \(RitualCatalog.steps.count)")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(Theme.muted)
                     Text(step.subtitle)
-                        .font(.body)
+                        .font(.subheadline)
                         .foregroundStyle(Theme.muted)
                 }
 
                 DisclaimerBanner(compact: true)
 
-                LabeledSection(title: "What to do", systemImage: "checkmark.circle") {
-                    VStack(alignment: .leading, spacing: 14) {
+                LabeledSection(title: "What to do") {
+                    VStack(alignment: .leading, spacing: 12) {
                         ForEach(Array(step.whatToDo.enumerated()), id: \.offset) { index, point in
                             NumberedPoint(number: index + 1, text: point)
                         }
                     }
                 }
 
-                LabeledSection(title: "Common mistakes", systemImage: "exclamationmark.triangle") {
-                    VStack(alignment: .leading, spacing: 12) {
+                LabeledSection(title: "Common mistakes") {
+                    VStack(alignment: .leading, spacing: 10) {
                         ForEach(Array(step.commonMistakes.enumerated()), id: \.offset) { _, mistake in
-                            HStack(alignment: .top, spacing: 10) {
+                            HStack(alignment: .top, spacing: 8) {
                                 Image(systemName: "xmark.circle")
                                     .foregroundStyle(Theme.danger)
                                     .accessibilityHidden(true)
@@ -46,7 +42,7 @@ struct RitualStepDetailView: View {
                     }
                 }
 
-                LabeledSection(title: "When women differ", systemImage: "person.2") {
+                LabeledSection(title: "When women differ") {
                     Text(step.womenNotes)
                         .font(.body)
                         .foregroundStyle(Theme.ink)
@@ -55,8 +51,8 @@ struct RitualStepDetailView: View {
 
                 relatedDuas
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 16)
+            .padding(.horizontal, Theme.horizontalPadding)
+            .padding(.vertical, 12)
         }
         .umrahScreenBackground()
         .navigationTitle(step.title)
@@ -67,10 +63,10 @@ struct RitualStepDetailView: View {
     private var relatedDuas: some View {
         let matches = relatedDuasForStep
         if !matches.isEmpty {
-            LabeledSection(title: "Related duas", systemImage: "text.book.closed") {
-                VStack(alignment: .leading, spacing: 12) {
+            LabeledSection(title: "Related duas") {
+                VStack(alignment: .leading, spacing: 10) {
                     Text("Use Perform for one dua at a time. Nothing here is a required script for every circuit or leg.")
-                        .font(.body)
+                        .font(.footnote)
                         .foregroundStyle(Theme.muted)
 
                     ForEach(matches) { dua in

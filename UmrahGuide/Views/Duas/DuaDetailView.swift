@@ -5,19 +5,13 @@ struct DuaDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                Text(dua.title)
-                    .font(.largeTitle.weight(.bold))
-                    .foregroundStyle(Theme.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityAddTraits(.isHeader)
-
+            VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(dua.occasion.title)
-                        .font(.headline)
+                        .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.accent)
                     Text(dua.occasion.meaning)
-                        .font(.body)
+                        .font(.footnote)
                         .foregroundStyle(Theme.muted)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -26,21 +20,21 @@ struct DuaDetailView: View {
 
                 DuaDisplayFilterBar()
 
-                LabeledSection(title: "Dua", systemImage: "text.book.closed") {
+                LabeledSection(title: "Dua") {
                     DuaTextBlock(dua: dua, showsTitle: false)
                 }
 
-                LabeledSection(title: "When to say it", systemImage: "clock") {
+                LabeledSection(title: "When to say it") {
                     Text(dua.whenToSay)
                         .font(.body)
                         .foregroundStyle(Theme.ink)
                 }
 
-                LabeledSection(title: "Source note", systemImage: "scroll") {
-                    VStack(alignment: .leading, spacing: 8) {
+                LabeledSection(title: "Source") {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text(sourceKindLabel)
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(Theme.accent)
+                            .foregroundStyle(Theme.ink)
                         Text(dua.sourceNote)
                             .font(.body)
                             .foregroundStyle(Theme.ink)
@@ -48,7 +42,7 @@ struct DuaDetailView: View {
                 }
             }
             .padding(.horizontal, Theme.horizontalPadding)
-            .padding(.vertical, 16)
+            .padding(.vertical, 12)
         }
         .umrahScreenBackground()
         .navigationTitle(dua.title)

@@ -4,7 +4,8 @@ Independent iOS app from **DeskLink.ai** (Mohammed Ilyas). Offline educational c
 
 - **Display name:** Umrah Guide
 - **Bundle ID:** `ai.desklink.umrahguide`
-- **Version:** 1.0 (build 3)
+- **Version:** 1.0.1 (build 4)
+- **Appearance:** Light only
 - **Devices:** iPhone, iOS 17 or later
 - **Signing:** Automatic. Select your Apple Development Team in Xcode. This repository does not contain an Apple Team ID.
 
@@ -38,9 +39,12 @@ Export compliance: the target sets `ITSAppUsesNonExemptEncryption` to `NO`. The 
 
 | Tab | Contents |
 | --- | --- |
-| Perform | Four collapsible stages (ihram, tawaf, sa'i, hair). The current stage is marked Now. Expand a stage for instructions and an in-place checklist. Each step’s duas are collapsed rows — tap a title to open Arabic, how to say it, and meaning. One Next button. A filter shows those three fields in any combination (default: all three; saved on this iPhone). |
+| Perform | Four collapsible stages (ihram, tawaf, sa'i, hair). The current stage is marked Now; the current step is highlighted. Expand a stage for instructions and an in-place checklist. Each step’s duas are collapsed rows — tap a title to open Arabic, how to say it, and meaning. One Next button. A filter shows those three fields in any combination (default: all three; saved on this iPhone). |
+| Duas | Rite groups plus Personal / Everyday. Each dua is a collapsed row. Same Arabic / how to say it / meaning filter. |
 | Pack | Ihram and packing items, stored in on-device `UserDefaults` |
-| More | All duas (rite groups plus Personal / Everyday, each a collapsed row), About, and a reset for your Perform place |
+| More | About, privacy, and a reset for your Perform place |
+
+The app forces a light appearance (`preferredColorScheme(.light)` and `UIUserInterfaceStyle = Light`). Soft off-white backgrounds, dark text, restrained green accents.
 
 Guidance is high-level Sunni majority practice. It is **not a fatwa**. Users are told to consult a qualified scholar.
 
@@ -56,6 +60,7 @@ The **UmrahGuide** scheme includes **UmrahGuideTests**:
 - Dua bodies start collapsed. Expanding a row reveals Arabic, transliteration, and meaning according to the display filter.
 - Dua display filter (Arabic / transliteration / meaning) defaults to all three and persists in an isolated `UserDefaults` suite.
 - Dua catalog covers ihram, the Sacred Mosque, first sight of the Kaaba, tawaf (including Rabbana atina), Maqam Ibrahim, Zamzam, sa'i, the hair rite, and a Personal / Everyday group (provision, forgiveness, protection, guidance, gratitude, parents, family, health, travel, anxiety, a good ending, knowledge). Every card has Arabic, Latin transliteration, English meaning, and an honest source note. Bodies stay collapsed until tapped.
+- Tab bar destinations are Perform, Duas, Pack, and More. Duas is not listed under More. Appearance is light-only. Version is 1.0.1 (4).
 
 On a Mac: Product → Test, or:
 

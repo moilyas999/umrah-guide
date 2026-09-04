@@ -6,9 +6,9 @@ struct DuaDisplayFilterBar: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Show in duas")
-                .font(.subheadline.weight(.semibold))
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Show")
+                .font(.caption.weight(.semibold))
                 .foregroundStyle(Theme.muted)
                 .accessibilityAddTraits(.isHeader)
 
@@ -41,20 +41,20 @@ struct DuaDisplayFilterBar: View {
         } label: {
             HStack(spacing: 6) {
                 Image(systemName: on ? "checkmark.circle.fill" : "circle")
-                    .font(.body.weight(.semibold))
+                    .font(.subheadline)
                     .accessibilityHidden(true)
                 Text(field.title)
                     .font(.subheadline.weight(.semibold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
             }
-            .foregroundStyle(on ? Theme.page : Theme.ink)
+            .foregroundStyle(on ? Theme.accent : Theme.ink)
             .frame(maxWidth: .infinity, minHeight: Theme.minTap)
-            .background(on ? Theme.accent : Theme.card)
-            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(on ? Theme.accent.opacity(0.10) : Theme.card)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(on ? Theme.accent : Theme.ink.opacity(0.12), lineWidth: 1)
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(on ? Theme.accent.opacity(0.35) : Theme.hairline, lineWidth: 1)
             )
         }
         .buttonStyle(.plain)

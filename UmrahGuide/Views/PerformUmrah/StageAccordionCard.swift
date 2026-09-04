@@ -13,64 +13,61 @@ struct StageAccordionCard: View {
             header
             if presentation.isExpanded {
                 expandedContent
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 16)
-                    .padding(.top, 4)
+                    .padding(.horizontal, 14)
+                    .padding(.bottom, 14)
+                    .padding(.top, 2)
             }
         }
         .background(Theme.card)
         .clipShape(RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: Theme.cardRadius, style: .continuous)
-                .stroke(borderColor, lineWidth: presentation.isCurrent ? 2 : 1)
-        )
-        .shadow(
-            color: presentation.isCurrent ? Theme.accent.opacity(0.12) : .clear,
-            radius: presentation.isCurrent ? 10 : 0,
-            y: presentation.isCurrent ? 3 : 0
+                .stroke(borderColor, lineWidth: presentation.isCurrent ? 1.5 : 1)
         )
         .accessibilityElement(children: presentation.isExpanded ? .contain : .combine)
     }
 
     private var borderColor: Color {
-        presentation.isCurrent ? Theme.accent : Theme.ink.opacity(0.06)
+        presentation.isCurrent ? Theme.accent.opacity(0.55) : Theme.hairline
     }
 
     private var header: some View {
         Button(action: onToggle) {
-            HStack(alignment: .top, spacing: 12) {
+            HStack(alignment: .top, spacing: 10) {
                 stageIndex
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 3) {
                     HStack(spacing: 8) {
                         Text(presentation.stage.title)
-                            .font(.title3.weight(.semibold))
+                            .font(.headline)
                             .foregroundStyle(Theme.ink)
                         if presentation.isCurrent {
                             Text("Now")
-                                .font(.caption.weight(.bold))
-                                .foregroundStyle(Theme.page)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 3)
-                                .background(Theme.accent)
+                                .font(.caption2.weight(.semibold))
+                                .foregroundStyle(Theme.accent)
+                                .padding(.horizontal, 7)
+                                .padding(.vertical, 2)
+                                .background(Theme.accent.opacity(0.12))
                                 .clipShape(Capsule())
                                 .accessibilityHidden(true)
                         }
                         Spacer(minLength: 8)
                         Image(systemName: presentation.isExpanded ? "chevron.up" : "chevron.down")
-                            .font(.body.weight(.semibold))
+                            .font(.footnote.weight(.semibold))
                             .foregroundStyle(Theme.muted)
                             .accessibilityHidden(true)
                     }
                     Text("Step \(presentation.progressLabel)")
-                        .font(.subheadline.weight(.medium))
+                        .font(.footnote)
                         .foregroundStyle(presentation.isCurrent ? Theme.accent : Theme.muted)
-                    Text(presentation.actionSummary)
-                        .font(.body)
-                        .foregroundStyle(Theme.ink)
-                        .fixedSize(horizontal: false, vertical: true)
+                    if !presentation.isExpanded {
+                        Text(presentation.actionSummary)
+                            .font(.subheadline)
+                            .foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                 }
             }
-            .padding(16)
+            .padding(14)
             .frame(maxWidth: .infinity, minHeight: Theme.minTap, alignment: .leading)
             .contentShape(Rectangle())
         }
@@ -82,9 +79,9 @@ struct StageAccordionCard: View {
 
     private var stageIndex: some View {
         Text("\(stageOrder)")
-            .font(.subheadline.weight(.bold))
-            .foregroundStyle(presentation.isCurrent ? Theme.page : Theme.accent)
-            .frame(width: 28, height: 28)
+            .font(.caption.weight(.bold))
+            .foregroundStyle(presentation.isCurrent ? Color.white : Theme.accent)
+            .frame(width: 24, height: 24)
             .background(presentation.isCurrent ? Theme.accent : Theme.accent.opacity(0.12))
             .clipShape(Circle())
             .accessibilityHidden(true)
@@ -95,7 +92,7 @@ struct StageAccordionCard: View {
     }
 
     private var expandedContent: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 14) {
             stepChecklist
             if let current = focusedStep {
                 currentInstructions(current)
@@ -111,7 +108,7 @@ struct StageAccordionCard: View {
     }
 
     private var stepChecklist: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 4) {
             Text("In this stage")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(Theme.muted)
@@ -125,7 +122,7 @@ struct StageAccordionCard: View {
                 } label: {
                     HStack(alignment: .center, spacing: 10) {
                         Image(systemName: done ? "checkmark.circle.fill" : (current ? "circle.inset.filled" : "circle"))
-                            .font(.title3)
+                            .font(.body)
                             .foregroundStyle(done || current ? Theme.accent : Theme.muted)
                             .accessibilityHidden(true)
                         Text(step.title)
@@ -135,8 +132,11 @@ struct StageAccordionCard: View {
                             .fixedSize(horizontal: false, vertical: true)
                         Spacer(minLength: 4)
                     }
+                    .padding(.horizontal, 8)
                     .padding(.vertical, 8)
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .background(current ? Theme.accent.opacity(0.10) : Color.clear)
+                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -149,7 +149,7 @@ struct StageAccordionCard: View {
 
     @ViewBuilder
     private func currentInstructions(_ step: PerformStep) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Do this")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(Theme.muted)
@@ -182,7 +182,7 @@ struct StageAccordionCard: View {
             } label: {
                 HStack(spacing: 10) {
                     Image(systemName: isStepDone(step.id) ? "checkmark.circle.fill" : "circle")
-                        .font(.title2)
+                        .font(.title3)
                         .foregroundStyle(isStepDone(step.id) ? Theme.accent : Theme.muted)
                         .accessibilityHidden(true)
                     Text("I've done this")
@@ -193,7 +193,7 @@ struct StageAccordionCard: View {
                 .padding(.horizontal, 12)
                 .frame(maxWidth: .infinity, minHeight: Theme.minTap, alignment: .leading)
                 .background(Theme.accent.opacity(0.08))
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             }
             .buttonStyle(.plain)
             .accessibilityLabel("I've done this")
@@ -207,7 +207,7 @@ struct StageAccordionCard: View {
         let stepDuas = DuaExpansion.duas(for: step)
 
         if !stepDuas.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text(stepDuas.count == 1 ? "Dua" : "Duas for this step")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(Theme.muted)
